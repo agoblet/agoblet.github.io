@@ -38,7 +38,7 @@ export default function About() {
           page if you are interested in my work.
         </Paragraph>
         <Paragraph gutterBottom={false}>
-          I spend my much of my free time outside enjoying nature. I love hiking
+          I spend much of my free time outside enjoying nature. I love hiking
           through the beautiful area around my hometown Valkenburg. When the
           weather allows it, you can find me on the water windsurfing. I also
           love meeting up with friends for board games. My favourite game?

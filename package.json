@@ -53,6 +53,6 @@
     "updatedeps": "npm-check-updates -u",
     "checkdeps": "npm-check-updates",
     "deploy": "gh-pages -d dist",
-    "cicd": "npm run checkdeps && npm audit && npm run checkformat && npm run lint && npm run build && npm run deploy"
+    "cicd": "npm run checkdeps && npm run checkformat && npm run lint && npm run build && npm run deploy"
   }
 }
