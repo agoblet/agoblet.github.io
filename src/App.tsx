@@ -8,18 +8,21 @@ import { Content } from "./routes/content/Content";
 import Footer from "./Footer";
 import NotFound from "./routes/notfound/NotFound";
 import { Stack } from "@mui/material";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <Stack minHeight="100vh">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/content" element={<Content />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/content" element={<Content />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </ScrollToTop>
       <Footer />
     </Stack>
   );
