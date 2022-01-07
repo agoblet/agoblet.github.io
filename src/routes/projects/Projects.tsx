@@ -237,6 +237,6 @@ export const projects: Project[] = [
         data science projects for customers.
       </Paragraph>
     ),
-    tools: [tools.python, tools.kubernetes, tools.azure, tools.r],
+    tools: [tools.python, tools.kubernetes, tools.azure, tools.r, tools.angular, tools.csharp],
   },
 ];
