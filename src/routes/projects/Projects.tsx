@@ -223,8 +223,8 @@ export const projects: Project[] = [
     organization: "Mediaan",
     logoPath: mediaanLogo,
     role: "Software Engineer & Data Scientist",
-    from: "2018",
-    to: "Now",
+    from: "2014",
+    to: "2018",
     description: (
       <Paragraph center={false}>
         I joined Mediaan for a 2 year internship of 20 hours a week on average
@@ -237,6 +237,6 @@ export const projects: Project[] = [
         data science projects for customers.
       </Paragraph>
     ),
-    tools: [tools.python, tools.kubernetes, tools.azure, tools.tensorflow],
+    tools: [tools.python, tools.kubernetes, tools.azure, tools.r],
   },
 ];
