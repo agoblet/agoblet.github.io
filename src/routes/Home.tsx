@@ -17,18 +17,7 @@ export default function Home() {
       <Page>
         <Grid container>
           <Grid item container md={8} xs={12} sx={{ alignItems: "center" }}>
-            <Stack
-              sx={{
-                ml: {
-                  xs: "auto",
-                  md: 0,
-                },
-                mr: {
-                  xs: "auto",
-                  md: 0,
-                },
-              }}
-            >
+            <Stack>
               <Typography variant="h2">Hi, I&apos;m Axel! 👋</Typography>
               <Typography variant="subtitle1">
                 Machine learning engineer @ BigData Republic{" "}
