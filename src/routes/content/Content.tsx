@@ -95,7 +95,7 @@ export const content: ContentItem[] = [
       </Paragraph>
     ),
     link: "https://github.com/agoblet/agoblet.github.io",
-    date: "5 Jan 2021",
+    date: "5 Jan 2022",
   },
   {
     title: "Whitepaper: Next-level ML with Model Serving Platforms",
