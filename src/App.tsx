@@ -12,7 +12,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
-    <Stack>
+    <Stack minHeight="100vh">
       <Header />
       <ScrollToTop>
         <Routes>
