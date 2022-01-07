@@ -62,7 +62,7 @@ export default function Home() {
           >
             <img src={meImg} alt="me" style={{ maxWidth: 300 }} />
           </Grid>
-          <Grid item md={6} xs={12} pl={{ md: 2 }} pr={{ md: 2 }}>
+          <Grid item md={6} xs={12} pr={{ md: 2 }}>
             <Box sx={{ textAlign: "center" }}>
               <Typography variant="h2" mt={20} mb={3}>
                 Current Project
@@ -73,7 +73,7 @@ export default function Home() {
             </Box>
             <ProjectCard project={projects[0]} />
           </Grid>
-          <Grid item md={6} xs={12} pl={{ md: 2 }} pr={{ md: 2 }}>
+          <Grid item md={6} xs={12} pl={{ md: 2 }}>
             <Box sx={{ textAlign: "center" }}>
               <Typography variant="h2" mt={20} mb={3}>
                 Latest Content
