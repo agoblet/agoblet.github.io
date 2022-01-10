@@ -29,7 +29,17 @@ module.exports = {
       },
       {
         test: /\.(png|jp(e*)g|gif)$/,
-        use: ["file-loader"],
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            options: {
+              webp: {
+                quality: 80,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.svg$/,

@@ -25,6 +25,7 @@
     "file-loader": "^6.2.0",
     "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.0.1",
     "npm-check-updates": "^12.1.0",
     "prettier": "^2.5.1",
     "style-loader": "^3.3.1",
@@ -53,6 +54,6 @@
     "updatedeps": "npm-check-updates -u",
     "checkdeps": "npm-check-updates",
     "deploy": "gh-pages -d dist",
-    "cicd": "npm run checkdeps && npm run checkformat && npm run lint && npm run build && npm run deploy"
+    "cicd": "npm run checkdeps && npm audit --omit dev && npm run checkformat && npm run lint && npm run build && npm run deploy"
   }
 }
