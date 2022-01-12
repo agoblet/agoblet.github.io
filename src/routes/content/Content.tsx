@@ -19,13 +19,8 @@ import mlopsCommunityImage from "../../../assets/content/mlops-community.jpg";
 import metaflowImage from "../../../assets/content/metaflow.png";
 import airflowImage from "../../../assets/content/airflow.png";
 import Paragraph from "../../components/Paragraph";
-import useCounter from "../../hooks/useCounter";
 
 export function Content() {
-  // Workaround to hopefully fix masonry layout breaking.
-  // Issue seems related or equal to https://github.com/mui-org/material-ui/issues/29692
-  const [_count, increment] = useCounter();
-
   return (
     <PageWidth>
       <Page>
@@ -34,7 +29,6 @@ export function Content() {
           {content.map((c, i) => (
             <Box key={i}>
               <ContentCard
-                increment={increment}
                 content={c}
                 sx={{ ml: { sm: 2 }, mr: { sm: 2 }, mb: 4 }}
               />
@@ -49,10 +43,9 @@ export function Content() {
 type ContentCardProps = {
   content: ContentItem;
   sx?: SxProps;
-  increment?: () => void;
 };
 
-export function ContentCard({ content, sx, increment }: ContentCardProps) {
+export function ContentCard({ content, sx }: ContentCardProps) {
   return (
     <Card sx={sx}>
       {content.imagePath && (
@@ -60,9 +53,6 @@ export function ContentCard({ content, sx, increment }: ContentCardProps) {
           src={content.imagePath}
           alt={content.title}
           style={{ maxWidth: "100%" }}
-          onLoad={() => {
-            if (increment) increment();
-          }}
         />
       )}
       <CardContent>
