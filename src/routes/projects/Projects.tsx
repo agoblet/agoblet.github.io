@@ -234,7 +234,11 @@ export const projects: Project[] = [
         backend applications for various customers. In the latter part of my
         internship I worked on data science projects. After my internship, I
         kept working at Mediaan next to my Master&apos;s doing more end-to-end
-        data science projects for customers.
+        data science{" "}
+        <Link href="https://mediaan.com/cases/predictive-model-cb">
+          projects
+        </Link>{" "}
+        for customers.
       </Paragraph>
     ),
     tools: [
