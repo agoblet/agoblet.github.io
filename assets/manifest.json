@@ -1,11 +1,14 @@
 {
+  "name": "Axel Goblet",
+  "short_name": "Axel Goblet",
+  "description": "Machine learning engineer at BigData Republic",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
   "orientation": "any",
   "start_url": "/?homescreen=1",
-  "background_color": "#fff",
-  "theme_color": "#fff",
+  "background_color": "#000000",
+  "theme_color": "#22b391",
   "icons": [
     {
       "src": "android-chrome-36x36.png",
