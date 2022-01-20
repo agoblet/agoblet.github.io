@@ -19,15 +19,11 @@ const theme = responsiveFontSizes(
       mode: "dark",
       background: {
         default: "#000000",
-        // default: "#000040",
-        // paper: "#000040"
       },
       primary: {
-        // main: "#d5d5e8"
         main: "#22b391",
       },
       secondary: {
-        // main: "#856a73"
         main: "#b6b6b6",
       },
     },

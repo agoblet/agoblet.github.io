@@ -1,9 +1,11 @@
 {
+  "name": "Axel Goblet",
+  "description": "Machine learning engineer at BigData Republic",
   "devDependencies": {
-    "@babel/core": "^7.16.7",
+    "@babel/core": "^7.16.10",
     "@babel/node": "^7.16.8",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
-    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-env": "^7.16.10",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@svgr/webpack": "^6.2.0",

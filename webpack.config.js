@@ -62,7 +62,10 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
-    new FaviconsWebpackPlugin("assets/favicon.png"),
+    new FaviconsWebpackPlugin({
+      logo: "assets/favicon.png",
+      favicons: { background: "#000000", theme_color: "#22b391" },
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
