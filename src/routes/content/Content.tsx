@@ -16,8 +16,9 @@ import Page from "../../components/Page";
 import websiteImage from "../../../assets/content/website.png";
 import whitepaperImage from "../../../assets/content/whitepaper.png";
 import mlopsCommunityImage from "../../../assets/content/mlops-community.jpg";
-import metaflowImage from "../../../assets/content/metaflow.png";
+import metaflowImage from "../../../assets/content/metaflow.jpg";
 import airflowImage from "../../../assets/content/airflow.png";
+import haplotypeImage from "../../../assets/content/haplotype.png";
 import Paragraph from "../../components/Paragraph";
 
 export function Content() {
@@ -86,7 +87,7 @@ export const content: ContentItem[] = [
     title: "This website is open source",
     imagePath: websiteImage,
     text: (
-      <Paragraph gutterBottom={false}>
+      <Paragraph center={false} gutterBottom={false}>
         I open sourced the code of this website. It is built with React and
         deployed on Github Pages. It might be a bit overengineered for a simple
         website without a backend, but it was a nice opportunity to get to know
@@ -101,7 +102,7 @@ export const content: ContentItem[] = [
     title: "Whitepaper: Next-level ML with Model Serving Platforms",
     imagePath: whitepaperImage,
     text: (
-      <Paragraph gutterBottom={false}>
+      <Paragraph center={false} gutterBottom={false}>
         I wrote a whitepaper on machine learning model serving. It explains how
         model serving platforms can help organizations scale their machine
         learning capabilities efficiently. The whitepaper contains a conceptual
@@ -119,7 +120,7 @@ export const content: ContentItem[] = [
       "Podcast: Scaling machine learning capabilities in large organizations",
     imagePath: mlopsCommunityImage,
     text: (
-      <Paragraph gutterBottom={false}>
+      <Paragraph center={false} gutterBottom={false}>
         My colleague Bertjan Broeksema and I were invited to Demetrios
         Brinkmann&apos;s MLOps Community Podcast. We talked about the hurdles
         large organizations face when scaling their machine learning
@@ -137,7 +138,7 @@ export const content: ContentItem[] = [
     title: "Blog: A Review of Netflix's Metaflow",
     imagePath: metaflowImage,
     text: (
-      <Paragraph gutterBottom={false}>
+      <Paragraph center={false} gutterBottom={false}>
         Netflix open sourced their internal machine learning platform Metaflow.
         Due to my interest in MLOps, I wanted to dive into the tool right away.
         Thus, I wrote a review on it. Check it out on Medium.
@@ -151,7 +152,7 @@ export const content: ContentItem[] = [
       "Workshop: Scheduling machine learning pipelines using Apache Airflow",
     imagePath: airflowImage,
     text: (
-      <Paragraph gutterBottom={false}>
+      <Paragraph center={false} gutterBottom={false}>
         At PyData Eindhoven 2019 I gave a workshop on scheduling machine
         learning pipelines using Apache Airflow. In the first plenary part of
         the workshop I explained what Airflow is and why I love the tool. In the
@@ -166,5 +167,24 @@ export const content: ContentItem[] = [
     ),
     link: "https://www.youtube.com/watch?v=bkZ3HAQYEEg",
     date: "20 nov 2019",
+  },
+  {
+    title:
+      "Paper: On a Fixed Haplotype Variant of the Minimum Error Correction Problem",
+    imagePath: haplotypeImage,
+    text: (
+      <Paragraph center={false} gutterBottom={false}>
+        During my research internship, we studied the Minimum Error Correction
+        problem. This problem has been intensively studied in the computational
+        biology literature and is also known in the clustering literature:
+        essentially we are required to find two cluster centres such that the
+        sum of distances to the nearest centre, is minimized. The paper contains
+        proofs about the computational complexity of a variant of the Minimum
+        Error Correction problem. It was published in COCOON, the journal of
+        computing and combinatorics.
+      </Paragraph>
+    ),
+    link: "https://www.researchgate.net/publication/326064707_On_a_Fixed_Haplotype_Variant_of_the_Minimum_Error_Correction_Problem",
+    date: "29 Jun 2018",
   },
 ];
