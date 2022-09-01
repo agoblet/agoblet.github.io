@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 on: [push]
 jobs:
   ci:
@@ -12,3 +12,10 @@ jobs:
       - run: npm run checkdeps
       - run: npm run checkformat
       - run: npm run checklint
+      - run: npm run build
+  cd:
+    needs: ci
+    if: $GITHUB_REF=/refs/heads/main
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run deploy
