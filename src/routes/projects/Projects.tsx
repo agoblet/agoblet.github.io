@@ -21,6 +21,7 @@ import kpnLogo from "../../../assets/organizations/kpn.png";
 import nutrecoLogo from "../../../assets/organizations/nutreco.png";
 import mediaanLogo from "../../../assets/organizations/mediaan.png";
 import bdrLogo from "../../../assets/organizations/bdr.png";
+import managedGridLogo from "../../../assets/organizations/managedgrid.png";
 import { Tool, tools } from "./tools";
 import Paragraph from "../../components/Paragraph";
 
@@ -132,7 +133,7 @@ export const projects: Project[] = [
   },
   {
     organization: "Managed Grid (via BigData Republic)",
-    logoPath: bolLogo,
+    logoPath: managedGridLogo,
     role: "Team Lead",
     from: "2021",
     to: "2021",
