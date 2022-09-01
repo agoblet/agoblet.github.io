@@ -20,7 +20,7 @@ export default function Home() {
             <Stack>
               <Typography variant="h2">Hi, I&apos;m Axel! 👋</Typography>
               <Typography variant="subtitle1">
-                Machine learning engineer @ BigData Republic{" "}
+                Machine learning engineer @ BigData Republic
               </Typography>
               <Typography mb={4} variant="subtitle2">
                 Valkenburg aan de Geul, Netherlands 🇳🇱

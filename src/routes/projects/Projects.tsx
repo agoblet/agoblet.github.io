@@ -105,14 +105,13 @@ export type Project = {
   logoPath?: string;
 };
 
-/* eslint-disable max-len */
 export const projects: Project[] = [
   {
     organization: "bol.com (via BigData Republic)",
     logoPath: bolLogo,
     role: "Data Engineer",
     from: "2021",
-    to: "Now",
+    to: "2022",
     description: (
       <Paragraph center={false}>
         My team keeps the platform free of unwanted products. We do this by
@@ -128,7 +127,23 @@ export const projects: Project[] = [
       tools.gcp,
       tools.prometheus,
       tools.gitlab,
+      tools.kotlin,
     ],
+  },
+  {
+    organization: "Managed Grid (via BigData Republic)",
+    logoPath: bolLogo,
+    role: "Team Lead",
+    from: "2021",
+    to: "2021",
+    description: (
+      <Paragraph center={false}>
+        I lead a team of machine learning engineers during the development of a
+        predictive system in the energy domain. My responsiblities were system
+        design, project management and coaching of team members.
+      </Paragraph>
+    ),
+    tools: [tools.python, tools.ansible, tools.linux, tools.docker],
   },
   {
     organization: "Politie (via BigData Republic)",
@@ -154,6 +169,7 @@ export const projects: Project[] = [
       tools.openstack,
       tools.prometheus,
       tools.gitlab,
+      tools.linux,
     ],
   },
   {

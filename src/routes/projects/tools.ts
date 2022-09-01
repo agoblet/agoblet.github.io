@@ -17,6 +17,8 @@ import RIcon from "../../../assets/tools/r.svg";
 import CSharpIcon from "../../../assets/tools/c-sharp.svg";
 import AngularIcon from "../../../assets/tools/angular-icon.svg";
 import PrometheusIcon from "../../../assets/tools/prometheus.svg";
+import LinuxIcon from "../../../assets/tools/linux-tux.svg";
+import DockerIcon from "../../../assets/tools/docker-icon.svg";
 import { ReactElement, SVGProps } from "react";
 
 export type IconComponent = (props: SVGProps<SVGElement>) => ReactElement;
@@ -46,4 +48,6 @@ export const tools = {
   csharp: { name: "C#", icon: CSharpIcon },
   angular: { name: "Angular", icon: AngularIcon },
   prometheus: { name: "Prometheus", icon: PrometheusIcon },
+  linux: { name: "Linux", icon: LinuxIcon },
+  docker: { name: "Docker", icon: DockerIcon },
 };
