@@ -29,6 +29,7 @@
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
     "npm-check-updates": "^16.0.6",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.7.1",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1",
@@ -48,14 +49,21 @@
     "react-router-dom": "^6.3.0"
   },
   "scripts": {
-    "dev": "webpack serve --mode=development",
     "format": "prettier --write --ignore-path .gitignore .",
     "checkformat": "prettier --check --ignore-path .gitignore .",
+    "precommitformat": "npm run checkformat || (npm run format && false)",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore --fix .",
+    "checklint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
+    "precommitlint": "npm run checklint || (npm run lint && false)",
+    "dev": "webpack serve --mode=development",
     "build": "webpack --mode=production",
-    "updatedeps": "npm-check-updates -u",
+    "deps": "npm-check-updates -u",
     "checkdeps": "npm-check-updates -e 2",
     "deploy": "gh-pages -d dist",
-    "cicd": "npm run checkdeps && npm i && npm audit --omit dev && npm run checkformat && npm run lint && npm run build && npm run deploy"
-  }
+    "cicd": "npm run checkdeps && npm i && npm run checkformat && npm run checklint && npm run build && npm run deploy"
+  },
+  "pre-commit": [
+    "precommitformat",
+    "precommitlint"
+  ]
 }
