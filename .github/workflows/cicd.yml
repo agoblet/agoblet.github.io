@@ -1,21 +1,29 @@
 name: CI/CD
 on: [push]
 jobs:
-  ci:
+  cicd:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: install node
+        uses: actions/setup-node@v3
         with:
           node-version: 17.x
-      - run: npm ci
-      - run: npm run checkdeps
-      - run: npm run checkformat
-      - run: npm run checklint
-      - run: npm run build
-  cd:
-    needs: ci
-    if: $GITHUB_REF=/refs/heads/main
-    runs-on: ubuntu-latest
-    steps:
-      - run: npm run deploy
+      - name: install npm packages
+        run: npm ci
+      - name: check for outdated dependencies
+        run: npm run checkdeps
+      - name: format
+        run: npm run checkformat
+      - name: lint
+        run: npm run checklint
+      - name: build
+        run: npm run build
+      - name: deploy
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.ref_name == 'main'
