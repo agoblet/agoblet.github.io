@@ -59,10 +59,12 @@
     "build": "webpack --mode=production",
     "deps": "npm-check-updates -u",
     "checkdeps": "npm-check-updates -e 2",
+    "precommitdeps": "npm run checkdeps || (npm run deps && false)",
     "deploy": "gh-pages -d dist",
     "cicd": "npm run checkdeps && npm i && npm run checkformat && npm run checklint && npm run build && npm run deploy"
   },
   "pre-commit": [
+    "precommitdeps",
     "precommitformat",
     "precommitlint"
   ]
