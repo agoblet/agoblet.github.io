@@ -162,7 +162,13 @@ export const projects: Project[] = [
         scientists work secure and efficiently. The platform is based on
         Kubeflow, and integrated with all important police systems. My former
         colleague Steven Reitsma published an interesting (Dutch){" "}
-        <Link href="https://reitsma.io/blog/aap">blog</Link> about it.
+        <Link
+          href="https://reitsma.io/blog/aap"
+          aria-label="Read the blog about the platform"
+        >
+          blog
+        </Link>{" "}
+        about it.
       </Paragraph>
     ),
     tools: [
@@ -256,7 +262,10 @@ export const projects: Project[] = [
         internship I worked on data science projects. After my internship, I
         kept working at Mediaan next to my Master&apos;s doing more end-to-end
         data science{" "}
-        <Link href="https://mediaan.com/cases/predictive-model-cb">
+        <Link
+          href="https://mediaan.com/cases/predictive-model-cb"
+          aria-label="Read more about an example customer project"
+        >
           projects
         </Link>{" "}
         for customers.

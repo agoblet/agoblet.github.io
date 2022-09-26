@@ -65,7 +65,12 @@ export function ContentCard({ content, sx }: ContentCardProps) {
       </CardContent>
       <CardActions>
         <Button>
-          <Link variant="inherit" underline="none" href={content.link}>
+          <Link
+            variant="inherit"
+            underline="none"
+            href={content.link}
+            aria-label="Read more about this content"
+          >
             Learn more
           </Link>
         </Button>
@@ -159,7 +164,10 @@ export const content: ContentItem[] = [
         second part, attendees worked on some exercises in their own Airflow
         cluster, which we deployed for them on AWS. My colleague Dick Abma also
         wrote a{" "}
-        <Link href="https://www.bigdatarepublic.nl/articles/hosting-workshops-aws-using-ecs-ec2-and-terraform/">
+        <Link
+          href="https://www.bigdatarepublic.nl/articles/hosting-workshops-aws-using-ecs-ec2-and-terraform/"
+          aria-label="Read the blog about workshop setup"
+        >
           blog
         </Link>{" "}
         on this setup. The plenary session recording is available on Youtube.
