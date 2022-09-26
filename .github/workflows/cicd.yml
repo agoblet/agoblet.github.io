@@ -13,7 +13,7 @@ jobs:
       - name: install npm packages
         run: npm ci
       - name: check for outdated dependencies
-        run: npm run checkdeps
+        run: npm run deps
       - name: format
         run: npm run checkformat
       - name: lint

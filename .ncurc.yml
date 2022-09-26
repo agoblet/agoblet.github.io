@@ -1,0 +1,7 @@
+upgrade: true
+errorLevel: 2,
+reject:
+  # webp compression not working in v8.1.0 https://github.com/tcoopman/image-webpack-loader/issues/420
+  - image-webpack-loader
+  # v7 causes type error in favicons-webpack-plugin https://github.com/jantimon/favicons-webpack-plugin/issues/309
+  - favicons

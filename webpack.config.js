@@ -35,7 +35,7 @@ module.exports = {
             loader: "image-webpack-loader",
             options: {
               webp: {
-                quality: 80,
+                quality: 50,
               },
             },
           },
