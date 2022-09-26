@@ -3,7 +3,7 @@ ci:
     target: temporary-public-storage
   collect:
     isSinglePageApplication: true
-    staticDistDir: /dist
+    staticDistDir: dist
     url:
       - http://localhost/
       - http://localhost/content
