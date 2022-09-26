@@ -28,14 +28,68 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|jp(e*)g|gif)$/,
+        test: /\/assets\/(content|organizations)\/.+\.(png|jp(e*)g)$/,
         use: [
           "file-loader",
           {
             loader: "image-webpack-loader",
             options: {
+              mozjpeg: {
+                enabled: false,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                enabled: false,
+              },
+              svgo: {
+                enabled: false,
+              },
+              gifsicle: {
+                enabled: false,
+              },
               webp: {
                 quality: 50,
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\/assets\/me\.jpg$/,
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: {
+                enabled: false,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                enabled: false,
+              },
+              svgo: {
+                enabled: false,
+              },
+              gifsicle: {
+                enabled: false,
+              },
+              webp: {
+                crop: {
+                  x: 0,
+                  y: 0,
+                  width: 2912,
+                  height: 2912,
+                },
+                resize: {
+                  width: 300,
+                  height: 300,
+                },
+                size: 249856,
               },
             },
           },

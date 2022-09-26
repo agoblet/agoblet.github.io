@@ -44,12 +44,10 @@ export default function Home() {
             md={4}
             xs={12}
             sx={{
-              height: "300px",
-              overflow: "hidden",
               justifyContent: "center",
             }}
           >
-            <img src={meImg} alt="me" style={{ maxWidth: 300 }} />
+            <img src={meImg} alt="me" />
           </Grid>
           <Grid item md={6} xs={12} pr={{ md: 2 }}>
             <Box sx={{ textAlign: "center" }}>
