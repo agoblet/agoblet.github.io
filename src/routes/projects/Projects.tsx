@@ -67,10 +67,14 @@ export function ProjectCard({ project, sx }: ProjectCardProps) {
               <img
                 src={project.logoPath}
                 alt={project.organization}
-                style={{
-                  maxHeight: isLargeLogo ? 40 : 30,
-                  maxWidth: isLargeLogo ? 100 : 75,
-                }}
+                style={
+                  isLargeLogo
+                    ? {}
+                    : {
+                        maxHeight: 30,
+                        maxWidth: 75,
+                      }
+                }
               />
             )}
           </Box>

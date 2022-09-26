@@ -28,7 +28,25 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\/assets\/(content|organizations)\/.+\.(png|jp(e*)g)$/,
+        test: /\/assets\/organizations\/.+\.(png|jp(e*)g)$/,
+        use: [
+          "file-loader",
+          {
+            loader: "webpack-image-resize-loader",
+            options: {
+              width: 100,
+            },
+          },
+          {
+            loader: "webpack-image-resize-loader",
+            options: {
+              height: 40,
+            },
+          },
+        ],
+      },
+      {
+        test: /\/assets\/content\/.+\.(png|jp(e*)g)$/,
         use: [
           "file-loader",
           {
@@ -50,7 +68,7 @@ module.exports = {
                 enabled: false,
               },
               webp: {
-                quality: 50,
+                preset: "picture",
               },
             },
           },
@@ -89,7 +107,7 @@ module.exports = {
                   width: 300,
                   height: 300,
                 },
-                size: 249856,
+                preset: "photo",
               },
             },
           },
