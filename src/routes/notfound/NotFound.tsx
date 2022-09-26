@@ -9,7 +9,7 @@ export default function NotFound() {
   return (
     <PageWidth>
       <Page>
-        <PageTitle title="Page not found :(" />
+        <PageTitle title="Page not found 😵" />
         <Box display="flex" justifyContent="center">
           <Button component={Link} to="/">
             to the civilized world

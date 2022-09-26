@@ -21,7 +21,7 @@ import airflowImage from "../../../assets/content/airflow.png";
 import haplotypeImage from "../../../assets/content/haplotype.png";
 import Paragraph from "../../components/Paragraph";
 
-export function Content() {
+export default function Content() {
   return (
     <PageWidth>
       <Page>

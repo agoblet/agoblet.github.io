@@ -1,14 +1,29 @@
 import * as React from "react";
 import Header from "./Header";
 import { Route, Routes } from "react-router-dom";
-import About from "./routes/about/About";
-import { Projects } from "./routes/projects/Projects";
-import Home from "./routes/Home";
-import { Content } from "./routes/content/Content";
 import Footer from "./Footer";
-import NotFound from "./routes/notfound/NotFound";
 import { Stack } from "@mui/material";
 import ScrollToTop from "./components/ScrollToTop";
+import loadable from "@loadable/component";
+import PageWidth from "./components/PageWidth";
+import Page from "./components/Page";
+import PageTitle from "./components/PageTitle";
+
+const Home = loadable(() => import("./routes/Home"), {
+  fallback: <Loading />,
+});
+const About = loadable(() => import("./routes/about/About"), {
+  fallback: <Loading />,
+});
+const Projects = loadable(() => import("./routes/projects/Projects"), {
+  fallback: <Loading />,
+});
+const Content = loadable(() => import("./routes/content/Content"), {
+  fallback: <Loading />,
+});
+const NotFound = loadable(() => import("./routes/notfound/NotFound"), {
+  fallback: <Loading />,
+});
 
 export default function App() {
   return (
@@ -25,5 +40,15 @@ export default function App() {
       </ScrollToTop>
       <Footer />
     </Stack>
+  );
+}
+
+function Loading() {
+  return (
+    <PageWidth>
+      <Page>
+        <PageTitle title="Loading page... 🐌" />
+      </Page>
+    </PageWidth>
   );
 }

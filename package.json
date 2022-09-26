@@ -10,6 +10,7 @@
     "@babel/preset-typescript": "^7.18.6",
     "@lhci/cli": "^0.9.0",
     "@svgr/webpack": "^6.3.1",
+    "@types/loadable__component": "^5.13.4",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
@@ -29,7 +30,6 @@
     "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "~8.0.0",
-    "lighthouse": "^9.6.7",
     "npm-check-updates": "^16.3.2",
     "pre-commit": "^1.2.2",
     "prettier": "^2.7.1",
@@ -44,6 +44,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@loadable/component": "^5.15.2",
     "@mui/icons-material": "5.10.6",
     "@mui/lab": "5.0.0-alpha.100",
     "@mui/material": "^5.10.6",

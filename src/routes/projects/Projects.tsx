@@ -25,7 +25,7 @@ import managedGridLogo from "../../../assets/organizations/managedgrid.png";
 import { Tool, tools } from "./tools";
 import Paragraph from "../../components/Paragraph";
 
-export function Projects() {
+export default function Projects() {
   return (
     <PageWidth>
       <Page>
