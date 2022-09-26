@@ -20,6 +20,8 @@ jobs:
         run: npm run checklint
       - name: build
         run: npm run build
+      - name: lighthouse
+        run: npx lhci autorun
       - name: deploy
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
