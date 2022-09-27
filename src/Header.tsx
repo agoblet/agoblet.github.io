@@ -193,7 +193,7 @@ function HeaderButton({
       }}
       sx={{ pr: 2, pl: 2, ...sx }}
     >
-      <Typography variant={variant} color={color}>
+      <Typography variant={variant} component="span" color={color}>
         {text}
       </Typography>
     </ButtonBase>

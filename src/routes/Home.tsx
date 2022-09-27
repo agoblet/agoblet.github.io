@@ -47,7 +47,7 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <img src={meImg} alt="me" />
+            <img src={meImg} alt="me" style={{ height: 300, width: 300 }} />
           </Grid>
           <Grid item md={6} xs={12} pr={{ md: 2 }}>
             <Box sx={{ textAlign: "center" }}>

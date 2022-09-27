@@ -24,7 +24,6 @@ ci:
       preload-lcp-image: off
 =======
       csp-xss: warn
-      heading-order: warn
       image-size-responsive: warn
       maskable-icon: warn
       service-worker: warn
