@@ -18,7 +18,9 @@ export default function Home() {
         <Grid container>
           <Grid item container md={8} xs={12} sx={{ alignItems: "center" }}>
             <Stack>
-              <Typography variant="h2">Hi, I&apos;m Axel! 👋</Typography>
+              <Typography variant="h2" component="h1">
+                Hi, I&apos;m Axel! 👋
+              </Typography>
               <Typography variant="subtitle1">
                 Machine learning engineer @ BigData Republic
               </Typography>
@@ -47,7 +49,7 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <img src={meImg} alt="me" />
+            <img src={meImg} alt="me" style={{ height: 300, width: 300 }} />
           </Grid>
           <Grid item md={6} xs={12} pr={{ md: 2 }}>
             <Box sx={{ textAlign: "center" }}>

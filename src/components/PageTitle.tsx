@@ -10,7 +10,6 @@ export default function PageTitle({ title }: PageTitleProps) {
     <React.Fragment>
       <Typography
         variant="h1"
-        fontStyle={"secondary"}
         sx={{
           textAlign: "center",
           mb: 8,

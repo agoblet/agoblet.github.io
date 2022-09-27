@@ -58,7 +58,9 @@ export function ContentCard({ content, sx }: ContentCardProps) {
       )}
       <CardContent>
         <Typography variant="overline">{content.date}</Typography>
-        <Typography variant="h3">{content.title}</Typography>
+        <Typography variant="h3" component="h2">
+          {content.title}
+        </Typography>
         <Box mb={4} mt={6}>
           {content.text}
         </Box>

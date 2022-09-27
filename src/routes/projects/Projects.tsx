@@ -60,7 +60,9 @@ export function ProjectCard({ project, sx }: ProjectCardProps) {
             <Typography variant="overline">
               {project.from} {project.from !== project.to && `- ${project.to}`}
             </Typography>
-            <Typography variant="h3">{project.organization}</Typography>
+            <Typography variant="h3" component="h2">
+              {project.organization}
+            </Typography>
           </Box>
           <Box>
             {project.logoPath && (
