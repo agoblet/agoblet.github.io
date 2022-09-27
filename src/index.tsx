@@ -15,6 +15,16 @@ const headingTypography = {
 
 const theme = responsiveFontSizes(
   createTheme({
+    components: {
+      MuiTypography: {
+        defaultProps: {
+          variantMapping: {
+            subtitle1: "span",
+            subtitle2: "span",
+          },
+        },
+      },
+    },
     palette: {
       mode: "dark",
       background: {
