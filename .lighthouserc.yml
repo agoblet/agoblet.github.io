@@ -13,7 +13,6 @@ ci:
   assert:
     preset: lighthouse:recommended
     assertions:
-<<<<<<< HEAD
       csp-xss: off
       image-size-responsive: off
       maskable-icon: off
@@ -22,13 +21,3 @@ ci:
       unused-javascript: off
       uses-responsive-images: off
       preload-lcp-image: off
-=======
-      csp-xss: warn
-      image-size-responsive: warn
-      maskable-icon: warn
-      service-worker: warn
-      unsized-images: warn
-      unused-javascript: warn
-      uses-responsive-images: warn
-      preload-lcp-image: warn
->>>>>>> 417c1bf (fix meta-description lighthouse)
