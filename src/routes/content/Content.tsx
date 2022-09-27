@@ -69,9 +69,9 @@ export function ContentCard({ content, sx }: ContentCardProps) {
             variant="inherit"
             underline="none"
             href={content.link}
-            aria-label="Read more about this content"
+            aria-label={content.linkText}
           >
-            Learn more
+            {content.linkText}
           </Link>
         </Button>
       </CardActions>
@@ -85,6 +85,7 @@ export type ContentItem = {
   imagePath?: string;
   link: string;
   date: string;
+  linkText: string;
 };
 
 export const content: ContentItem[] = [
@@ -102,6 +103,7 @@ export const content: ContentItem[] = [
     ),
     link: "https://github.com/agoblet/agoblet.github.io",
     date: "5 Jan 2022",
+    linkText: "View the code",
   },
   {
     title: "Whitepaper: Next-level ML with Model Serving Platforms",
@@ -119,6 +121,7 @@ export const content: ContentItem[] = [
     ),
     link: "https://www.bigdatarepublic.nl/articles/whitepaper-next-level-ml-model-serving-platforms/",
     date: "30 Nov 2021",
+    linkText: "Read the whitepaper",
   },
   {
     title:
@@ -138,6 +141,7 @@ export const content: ContentItem[] = [
     ),
     link: "https://mlops.community/watch/scaling-machine-learning-capabilities-in-large-organizations-scaling-machine-learning-capabilities-in-large-organizations_5UFTbMh2QR3eSe/",
     date: "Aug 10 2020",
+    linkText: "Listen to the podcast",
   },
   {
     title: "Blog: A Review of Netflix's Metaflow",
@@ -151,6 +155,7 @@ export const content: ContentItem[] = [
     ),
     link: "https://medium.com/bigdatarepublic/a-review-of-netflixs-metaflow-65c6956e168d",
     date: "20 Dec 2019",
+    linkText: "Read the blog",
   },
   {
     title:
@@ -175,6 +180,7 @@ export const content: ContentItem[] = [
     ),
     link: "https://www.youtube.com/watch?v=bkZ3HAQYEEg",
     date: "20 nov 2019",
+    linkText: "Watch the recording",
   },
   {
     title:
@@ -194,5 +200,6 @@ export const content: ContentItem[] = [
     ),
     link: "https://www.researchgate.net/publication/326064707_On_a_Fixed_Haplotype_Variant_of_the_Minimum_Error_Correction_Problem",
     date: "29 Jun 2018",
+    linkText: "Read the paper",
   },
 ];
