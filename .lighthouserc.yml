@@ -13,7 +13,9 @@ ci:
   assert:
     preset: lighthouse:recommended
     assertions:
+      # requires CSP in a header, which is not possible on gh-pages
       csp-xss: warn
+
       image-size-responsive: warn
       maskable-icon: warn
       service-worker: warn
