@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const CspHtmlWebpackPlugin = require("csp-html-webpack-plugin");
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.tsx"),
@@ -104,8 +105,8 @@ module.exports = {
                   height: 2912,
                 },
                 resize: {
-                  width: 300,
-                  height: 300,
+                  width: 600,
+                  height: 600,
                 },
                 preset: "photo",
               },
@@ -144,5 +145,20 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: "gh-pages", to: "." }],
     }),
+    new CspHtmlWebpackPlugin(
+      {
+        "script-src": "'strict-dynamic' 'unsafe-eval' https: 'unsafe-inline'",
+        "base-uri": "'none'",
+        "style-src": "'unsafe-inline' fonts.googleapis.com",
+      },
+      {
+        hashEnabled: {
+          "style-src": false,
+        },
+        nonceEnabled: {
+          "style-src": false,
+        },
+      }
+    ),
   ],
 };
