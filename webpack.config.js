@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const CspHtmlWebpackPlugin = require("csp-html-webpack-plugin");
+const HtmlWebpackInjectPreload = require("@principalstudio/html-webpack-inject-preload");
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.tsx"),
@@ -31,17 +32,22 @@ module.exports = {
       {
         test: /\/assets\/organizations\/.+\.(png|jp(e*)g)$/,
         use: [
-          "file-loader",
           {
-            loader: "webpack-image-resize-loader",
+            loader: "file-loader",
             options: {
-              width: 100,
+              name: "[path][name][contenthash].[ext]",
             },
           },
           {
             loader: "webpack-image-resize-loader",
             options: {
-              height: 40,
+              width: 150,
+            },
+          },
+          {
+            loader: "webpack-image-resize-loader",
+            options: {
+              height: 60,
             },
           },
         ],
@@ -49,7 +55,12 @@ module.exports = {
       {
         test: /\/assets\/content\/.+\.(png|jp(e*)g)$/,
         use: [
-          "file-loader",
+          {
+            loader: "file-loader",
+            options: {
+              name: "[path][name][contenthash].[ext]",
+            },
+          },
           {
             loader: "image-webpack-loader",
             options: {
@@ -78,7 +89,12 @@ module.exports = {
       {
         test: /\/assets\/me\.jpg$/,
         use: [
-          "file-loader",
+          {
+            loader: "file-loader",
+            options: {
+              name: "[path][name][contenthash].[ext]",
+            },
+          },
           {
             loader: "image-webpack-loader",
             options: {
@@ -160,5 +176,17 @@ module.exports = {
         },
       }
     ),
+    new HtmlWebpackInjectPreload({
+      files: [
+        {
+          match: /assets\/me.+\.jpg/,
+          attributes: { as: "image" },
+        },
+        {
+          match: /assets\/content\/website.+\.png/,
+          attributes: { as: "image" },
+        },
+      ],
+    }),
   ],
 };

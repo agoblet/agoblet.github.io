@@ -22,4 +22,3 @@ ci:
       unsized-images: warn
       unused-javascript: warn
       uses-responsive-images: warn
-      preload-lcp-image: warn
