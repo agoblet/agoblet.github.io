@@ -53,7 +53,9 @@ export function ContentCard({ content, sx }: ContentCardProps) {
         <img
           src={content.imagePath}
           alt={content.title}
-          style={{ maxWidth: "100%" }}
+          width={content.imageWidth}
+          height={content.imageHeight}
+          style={{ width: "100%", height: "auto" }}
         />
       )}
       <CardContent>
@@ -84,7 +86,9 @@ export function ContentCard({ content, sx }: ContentCardProps) {
 export type ContentItem = {
   title: string;
   text: React.ReactNode;
-  imagePath?: string;
+  imagePath: string;
+  imageWidth: number;
+  imageHeight: number;
   link: string;
   date: string;
   linkText: string;
@@ -94,6 +98,8 @@ export const content: ContentItem[] = [
   {
     title: "This website is open source",
     imagePath: websiteImage,
+    imageWidth: 1200,
+    imageHeight: 630,
     text: (
       <Paragraph center={false} gutterBottom={false}>
         I open sourced the code of this website. It is built with React and
@@ -110,6 +116,8 @@ export const content: ContentItem[] = [
   {
     title: "Whitepaper: Next-level ML with Model Serving Platforms",
     imagePath: whitepaperImage,
+    imageWidth: 1625,
+    imageHeight: 1171,
     text: (
       <Paragraph center={false} gutterBottom={false}>
         I wrote a whitepaper on machine learning model serving. It explains how
@@ -129,6 +137,8 @@ export const content: ContentItem[] = [
     title:
       "Podcast: Scaling machine learning capabilities in large organizations",
     imagePath: mlopsCommunityImage,
+    imageWidth: 900,
+    imageHeight: 900,
     text: (
       <Paragraph center={false} gutterBottom={false}>
         My colleague Bertjan Broeksema and I were invited to Demetrios
@@ -148,6 +158,8 @@ export const content: ContentItem[] = [
   {
     title: "Blog: A Review of Netflix's Metaflow",
     imagePath: metaflowImage,
+    imageWidth: 1081,
+    imageHeight: 337,
     text: (
       <Paragraph center={false} gutterBottom={false}>
         Netflix open sourced their internal machine learning platform Metaflow.
@@ -163,6 +175,8 @@ export const content: ContentItem[] = [
     title:
       "Workshop: Scheduling machine learning pipelines using Apache Airflow",
     imagePath: airflowImage,
+    imageWidth: 1260,
+    imageHeight: 533,
     text: (
       <Paragraph center={false} gutterBottom={false}>
         At PyData Eindhoven 2019 I gave a workshop on scheduling machine
@@ -188,6 +202,8 @@ export const content: ContentItem[] = [
     title:
       "Paper: On a Fixed Haplotype Variant of the Minimum Error Correction Problem",
     imagePath: haplotypeImage,
+    imageWidth: 5000,
+    imageHeight: 1284,
     text: (
       <Paragraph center={false} gutterBottom={false}>
         During my research internship, we studied the Minimum Error Correction

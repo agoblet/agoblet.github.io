@@ -69,12 +69,19 @@ export function ProjectCard({ project, sx }: ProjectCardProps) {
               <img
                 src={project.logoPath}
                 alt={project.organization}
+                height={project.logoHeight}
+                width={project.logoWidth}
                 style={
                   isLargeLogo
-                    ? {}
+                    ? {
+                        width: "auto",
+                        height: "auto",
+                      }
                     : {
                         maxHeight: 30,
                         maxWidth: 75,
+                        width: "auto",
+                        height: "auto",
                       }
                 }
               />
@@ -109,13 +116,17 @@ export type Project = {
   description: React.ReactNode;
   tools: Tool[];
   role: string;
-  logoPath?: string;
+  logoPath: string;
+  logoWidth: number;
+  logoHeight: number;
 };
 
 export const projects: Project[] = [
   {
     organization: "bol.com (via BigData Republic)",
     logoPath: bolLogo,
+    logoWidth: 1013,
+    logoHeight: 213,
     role: "Data Engineer",
     from: "2021",
     to: "2022",
@@ -140,6 +151,8 @@ export const projects: Project[] = [
   {
     organization: "Managed Grid (via BigData Republic)",
     logoPath: managedGridLogo,
+    logoWidth: 293,
+    logoHeight: 208,
     role: "Team Lead",
     from: "2021",
     to: "2021",
@@ -155,6 +168,8 @@ export const projects: Project[] = [
   {
     organization: "Politie (via BigData Republic)",
     logoPath: politieLogo,
+    logoWidth: 2365,
+    logoHeight: 869,
     role: "MLOps Engineer",
     from: "2020",
     to: "2021",
@@ -191,6 +206,8 @@ export const projects: Project[] = [
     from: "2020",
     to: "2020",
     logoPath: rmcLogo,
+    logoWidth: 444,
+    logoHeight: 183,
     description: (
       <Paragraph center={false}>
         I migrated RMC&apos;s sensor data pipelines from legacy software to a
@@ -206,6 +223,8 @@ export const projects: Project[] = [
     from: "2019",
     to: "2020",
     logoPath: kpnLogo,
+    logoWidth: 1669,
+    logoHeight: 756,
     description: (
       <Paragraph center={false}>
         As part of the Finance Analytics team, I helped make KPN Finance more
@@ -219,6 +238,8 @@ export const projects: Project[] = [
   {
     organization: "Nutreco (via BigData Republic)",
     logoPath: nutrecoLogo,
+    logoWidth: 2362,
+    logoHeight: 794,
     role: "Machine Learning Engineer",
     from: "2018",
     to: "2019",
@@ -234,6 +255,8 @@ export const projects: Project[] = [
   {
     organization: "BigData Republic",
     logoPath: bdrLogo,
+    logoWidth: 965,
+    logoHeight: 358,
     role: "Machine Learning Engineer",
     from: "2018",
     to: "Now",
@@ -251,6 +274,8 @@ export const projects: Project[] = [
   {
     organization: "Mediaan",
     logoPath: mediaanLogo,
+    logoWidth: 1181,
+    logoHeight: 930,
     role: "Software Engineer & Data Scientist",
     from: "2014",
     to: "2018",
