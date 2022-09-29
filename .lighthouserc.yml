@@ -23,7 +23,7 @@ ci:
         - error
         - minScore: 1
       cumulative-layout-shift:
-        - warn
+        - error
         - maxNumericValue: 0.1
       # requires CSP in a header, which is not possible on gh-pages
       csp-xss: warn

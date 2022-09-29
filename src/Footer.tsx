@@ -5,8 +5,8 @@ import { ContactButtons } from "./components/ContactButtons";
 
 export default function Footer() {
   return (
-    <footer>
-      <Paper sx={{ mt: 10, pb: "32000px", mb: "-32000px" }}>
+    <footer style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+      <Paper sx={{ mt: 10, flexGrow: 1 }}>
         <PageWidth>
           <Box display="flex" alignItems="center" flexWrap="wrap">
             <Typography variant="overline" flexGrow={1}>
