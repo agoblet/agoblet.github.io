@@ -13,6 +13,15 @@ ci:
   assert:
     preset: lighthouse:recommended
     assertions:
+      categories:accessibility:
+        - error
+        - minScore: 1
+      categories:best-practices:
+        - error
+        - minScore: 1
+      categories:seo:
+        - error
+        - minScore: 1
       # requires CSP in a header, which is not possible on gh-pages
       csp-xss: warn
 
