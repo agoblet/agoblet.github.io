@@ -11,7 +11,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { ButtonBase, SxProps } from "@mui/material";
 import { Variant } from "@mui/material/styles/createTypography";
 import PageWidth from "./components/PageWidth";
-import { useStickyScroll } from "./hooks/useStickyScroll";
 import useBreakpoint from "./hooks/useBreakpoint";
 
 const pages = [
@@ -24,11 +23,10 @@ const title = "Axel Goblet";
 
 export default function Header() {
   const menuControl = useMenuControl();
-  const componentY = useStickyScroll();
   const isLargeMenu = useBreakpoint("md");
 
   return (
-    <AppBar sx={{ top: componentY }}>
+    <AppBar position={isLargeMenu ? "fixed" : "absolute"}>
       <PageWidth>
         <Toolbar disableGutters>
           {isLargeMenu ? (

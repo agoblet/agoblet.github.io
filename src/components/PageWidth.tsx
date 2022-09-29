@@ -6,5 +6,9 @@ type PageProps = {
 };
 
 export default function PageWidth({ children }: PageProps) {
-  return <Container maxWidth="md">{children}</Container>;
+  return (
+    <Container maxWidth="md" sx={{ flexGrow: 1 }}>
+      {children}
+    </Container>
+  );
 }

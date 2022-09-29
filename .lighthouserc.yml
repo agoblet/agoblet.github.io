@@ -13,6 +13,9 @@ ci:
   assert:
     preset: lighthouse:recommended
     assertions:
+      categories:performance:
+        - error
+        - minScore: 0.9
       categories:accessibility:
         - error
         - minScore: 1
@@ -22,6 +25,9 @@ ci:
       categories:seo:
         - error
         - minScore: 1
+      cumulative-layout-shift:
+        - error
+        - maxNumericValue: 0.1
       # requires CSP in a header, which is not possible on gh-pages
       csp-xss: warn
 

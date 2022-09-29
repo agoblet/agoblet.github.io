@@ -3,10 +3,11 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import { IconButton, SxProps } from "@mui/material";
+import { Box } from "@mui/system";
 
 export function ContactButtons() {
   return (
-    <React.Fragment>
+    <Box>
       <ContactButton
         href="https://github.com/agoblet"
         ariaLabel="Visit my Github"
@@ -22,7 +23,7 @@ export function ContactButtons() {
       <ContactButton href="mailto:a.goblet@hotmail.com" ariaLabel="Email me">
         <EmailIcon />
       </ContactButton>
-    </React.Fragment>
+    </Box>
   );
 }
 
@@ -36,7 +37,7 @@ type ContactButtonProps = {
 function ContactButton({ href, children, sx, ariaLabel }: ContactButtonProps) {
   return (
     <IconButton
-      size="large"
+      size="medium"
       href={href}
       color="inherit"
       sx={sx}
