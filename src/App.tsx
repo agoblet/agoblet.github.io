@@ -27,7 +27,7 @@ const NotFound = loadable(() => import("./routes/notfound/NotFound"), {
 
 export default function App() {
   return (
-    <Stack minHeight="100vh">
+    <Stack minHeight="100vh" overflow="hidden">
       <Header />
       <ScrollToTop>
         <Routes>
