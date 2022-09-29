@@ -8,10 +8,8 @@ import loadable from "@loadable/component";
 import PageWidth from "./components/PageWidth";
 import Page from "./components/Page";
 import PageTitle from "./components/PageTitle";
+import Home from "./routes/Home";
 
-const Home = loadable(() => import("./routes/Home"), {
-  fallback: <Loading />,
-});
 const About = loadable(() => import("./routes/about/About"), {
   fallback: <Loading />,
 });
