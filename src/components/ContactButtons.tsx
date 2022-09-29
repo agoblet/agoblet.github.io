@@ -7,25 +7,23 @@ import { Box } from "@mui/system";
 
 export function ContactButtons() {
   return (
-    <React.Fragment>
-      <Box>
-        <ContactButton
-          href="https://github.com/agoblet"
-          ariaLabel="Visit my Github"
-        >
-          <GitHubIcon />
-        </ContactButton>
-        <ContactButton
-          href="https://www.linkedin.com/in/axel-goblet-5325327a"
-          ariaLabel="Visit my LinkedIn"
-        >
-          <LinkedInIcon />
-        </ContactButton>
-        <ContactButton href="mailto:a.goblet@hotmail.com" ariaLabel="Email me">
-          <EmailIcon />
-        </ContactButton>
-      </Box>
-    </React.Fragment>
+    <Box>
+      <ContactButton
+        href="https://github.com/agoblet"
+        ariaLabel="Visit my Github"
+      >
+        <GitHubIcon />
+      </ContactButton>
+      <ContactButton
+        href="https://www.linkedin.com/in/axel-goblet-5325327a"
+        ariaLabel="Visit my LinkedIn"
+      >
+        <LinkedInIcon />
+      </ContactButton>
+      <ContactButton href="mailto:a.goblet@hotmail.com" ariaLabel="Email me">
+        <EmailIcon />
+      </ContactButton>
+    </Box>
   );
 }
 
