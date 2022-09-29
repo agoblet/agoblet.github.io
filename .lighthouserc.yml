@@ -19,6 +19,5 @@ ci:
       image-size-responsive: warn
       maskable-icon: warn
       service-worker: warn
-      unsized-images: warn
       unused-javascript: warn
       uses-responsive-images: warn

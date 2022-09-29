@@ -58,7 +58,7 @@
     "format": "prettier --write --ignore-path .gitignore .",
     "checkformat": "prettier --check --ignore-path .gitignore .",
     "precommitformat": "npm run checkformat || (npm run format && false)",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore --config --fix .",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore --fix .",
     "checklint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
     "precommitlint": "npm run checklint || (npm run lint && false)",
     "dev": "webpack serve --mode=development",
