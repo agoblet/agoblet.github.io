@@ -20,7 +20,9 @@ jobs:
         run: npm run checklint
       - name: build
         run: npm run build
-      - name: lighthouse
+      - name: lighthouse desktop
+        run: npx lhci autorun --collect.settings.preset=desktop
+      - name: lighthouse mobile
         run: npx lhci autorun
       - name: deploy
         run: |
