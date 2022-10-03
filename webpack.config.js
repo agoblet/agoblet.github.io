@@ -5,6 +5,47 @@ const CopyPlugin = require("copy-webpack-plugin");
 const CspHtmlWebpackPlugin = require("csp-html-webpack-plugin");
 const HtmlWebpackInjectPreload = require("@principalstudio/html-webpack-inject-preload");
 
+const contentImageLoader = (test, height) => {
+  return {
+    test: test,
+    use: [
+      {
+        loader: "file-loader",
+        options: {
+          name: "[path][name][contenthash].[ext]",
+        },
+      },
+      {
+        loader: "image-webpack-loader",
+        options: {
+          mozjpeg: {
+            enabled: false,
+          },
+          optipng: {
+            enabled: false,
+          },
+          pngquant: {
+            enabled: false,
+          },
+          svgo: {
+            enabled: false,
+          },
+          gifsicle: {
+            enabled: false,
+          },
+          webp: {
+            preset: "picture",
+            resize: {
+              width: 900,
+              height: height,
+            },
+          },
+        },
+      },
+    ],
+  };
+};
+
 module.exports = {
   entry: path.join(__dirname, "src", "index.tsx"),
   output: {
@@ -52,40 +93,12 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\/assets\/content\/.+\.(png|jp(e*)g)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[path][name][contenthash].[ext]",
-            },
-          },
-          {
-            loader: "image-webpack-loader",
-            options: {
-              mozjpeg: {
-                enabled: false,
-              },
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                enabled: false,
-              },
-              svgo: {
-                enabled: false,
-              },
-              gifsicle: {
-                enabled: false,
-              },
-              webp: {
-                preset: "picture",
-              },
-            },
-          },
-        ],
-      },
+      contentImageLoader(/\/assets\/content\/airflow\.png$/, 381),
+      contentImageLoader(/\/assets\/content\/haplotype\.png$/, 231),
+      contentImageLoader(/\/assets\/content\/metaflow\.jpg$/, 281),
+      contentImageLoader(/\/assets\/content\/mlops-community\.jpg$/, 900),
+      contentImageLoader(/\/assets\/content\/website\.png$/, 473),
+      contentImageLoader(/\/assets\/content\/whitepaper\.png$/, 649),
       {
         test: /\/assets\/me\.jpg$/,
         use: [
