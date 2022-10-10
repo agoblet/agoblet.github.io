@@ -26,7 +26,7 @@ export default function Header() {
   const isLargeMenu = useBreakpoint("md");
 
   return (
-    <AppBar position={isLargeMenu ? "fixed" : "absolute"}>
+    <AppBar position="absolute">
       <PageWidth>
         <Toolbar disableGutters>
           {isLargeMenu ? (
