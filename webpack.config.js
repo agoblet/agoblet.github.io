@@ -196,7 +196,7 @@ module.exports = {
           attributes: { as: "image" },
         },
         {
-          match: /assets\/content\/website.+\.png/,
+          match: /assets\/content\/whitepaper.+\.png/,
           attributes: { as: "image" },
         },
       ],
