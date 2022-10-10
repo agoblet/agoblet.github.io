@@ -103,6 +103,7 @@ function CookieSwitch({
       }
       label={name}
       labelPlacement="end"
+      sx={{ minHeight: "48px", mt: 1 }}
     />
   );
 }
