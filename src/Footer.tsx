@@ -50,6 +50,13 @@ function FooterPageLink({ name, to }: FooterPageLinkProps) {
       to={to}
       underline="hover"
       color={pathname === to ? "primary" : "inherit"}
+      sx={{
+        minWidth: "48px",
+        pt: "9px",
+        pb: "9px",
+        mb: "8px",
+        textAlign: "right",
+      }}
     >
       {name}
     </MUILink>
