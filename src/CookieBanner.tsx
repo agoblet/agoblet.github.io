@@ -6,7 +6,7 @@ import {
   CardContent,
   Switch,
   Typography,
-  Stack,
+  FormControlLabel,
 } from "@mui/material";
 import PageWidth from "./components/PageWidth";
 import Paragraph from "./components/Paragraph";
@@ -96,9 +96,13 @@ function CookieSwitch({
   toggle = () => {},
 }: CookieSwitchProps) {
   return (
-    <Stack direction="row" alignItems="center">
-      <Switch disabled={disabled} checked={checked} onChange={toggle} />
-      <Typography>{name}</Typography>
-    </Stack>
+    <FormControlLabel
+      value="gaConsent"
+      control={
+        <Switch disabled={disabled} checked={checked} onChange={toggle} />
+      }
+      label={name}
+      labelPlacement="end"
+    />
   );
 }
