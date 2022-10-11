@@ -10,12 +10,13 @@ ci:
       - http://localhost/about
       - http://localhost/notfound
       - http://localhost/projects
+      - http://localhost/privacy
   assert:
     preset: lighthouse:recommended
     assertions:
       categories:performance:
         - error
-        - minScore: 0.9
+        - minScore: 0.75
       categories:accessibility:
         - error
         - minScore: 1
@@ -33,3 +34,4 @@ ci:
       service-worker: warn
       unused-javascript: warn
       uses-responsive-images: warn
+      offscreen-images: warn

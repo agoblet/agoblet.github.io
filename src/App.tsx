@@ -9,6 +9,8 @@ import About from "./routes/about/About";
 import Projects from "./routes/projects/Projects";
 import Content from "./routes/content/Content";
 import NotFound from "./routes/notfound/NotFound";
+import Privacy from "./routes/privacy/Privacy";
+import CookieBanner from "./CookieBanner";
 
 export default function App() {
   return (
@@ -20,10 +22,12 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/content" element={<Content />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ScrollToTop>
       <Footer />
+      <CookieBanner />
     </Stack>
   );
 }
