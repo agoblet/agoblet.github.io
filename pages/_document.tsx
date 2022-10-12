@@ -2,8 +2,10 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -39,7 +41,7 @@ export default function Document() {
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://www.axelgoblet.com/android-chrome-512x512.png"
+          content="https://www.axelgoblet.com/opengraph.png"
         />
       </Head>
       <body>
