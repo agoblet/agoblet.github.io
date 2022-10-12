@@ -38,7 +38,7 @@ export default function Home() {
                   <Typography variant="overline">Get in touch</Typography>
                 )}
                 <ContactButtons />
-                <Link href="/Users/axelgoblet/projects/pet/agoblet.github.io/pages/about">
+                <Link href="/about">
                   <Button href="/about">more about me</Button>
                 </Link>
               </Box>
@@ -66,7 +66,7 @@ export default function Home() {
               <Typography variant="h2" mt={20} mb={3}>
                 Current Project
               </Typography>
-              <Link href="/Users/axelgoblet/projects/pet/agoblet.github.io/pages/projects">
+              <Link href="/projects">
                 <Button href="/projects" sx={{ mb: 3 }}>
                   more projects
                 </Button>
@@ -79,7 +79,7 @@ export default function Home() {
               <Typography variant="h2" mt={20} mb={3}>
                 Latest Content
               </Typography>
-              <Link href="/Users/axelgoblet/projects/pet/agoblet.github.io/pages/content">
+              <Link href="/content">
                 <Button href="/content" sx={{ mb: 3 }}>
                   more content
                 </Button>

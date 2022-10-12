@@ -13,7 +13,7 @@
     "build": "next build && next export && next-image-export-optimizer",
     "deps": "npm-check-updates",
     "precommitdeps": "npm run deps || (npm i && false)",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d out",
     "ci": "npm ci"
   },
   "dependencies": {

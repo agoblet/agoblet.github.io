@@ -13,7 +13,7 @@ export default function NotFound() {
       </Head>
       <PageTitle title="Page not found 😵" />
       <Box display="flex" justifyContent="center">
-        <Link href="/Users/axelgoblet/projects/pet/agoblet.github.io/pages">
+        <Link href="/">
           <Button href="/">to the civilized world</Button>
         </Link>
       </Box>
