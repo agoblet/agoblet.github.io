@@ -34,3 +34,5 @@ ci:
 
       maskable-icon: warn
       service-worker: warn
+      unused-javascript: warn
+      uses-responsive-images: warn
