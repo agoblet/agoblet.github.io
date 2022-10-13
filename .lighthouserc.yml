@@ -3,14 +3,14 @@ ci:
     target: temporary-public-storage
   collect:
     isSinglePageApplication: true
-    staticDistDir: dist
+    staticDistDir: out
     url:
       - http://localhost/
-      - http://localhost/content
-      - http://localhost/about
-      - http://localhost/notfound
-      - http://localhost/projects
-      - http://localhost/privacy
+      - http://localhost/content.html
+      - http://localhost/about.html
+      - http://localhost/404.html
+      - http://localhost/projects.html
+      - http://localhost/privacy.html
   assert:
     preset: lighthouse:recommended
     assertions:
@@ -26,12 +26,13 @@ ci:
       categories:seo:
         - error
         - minScore: 1
-      # requires CSP in a header, which is not possible on gh-pages
-      csp-xss: warn
 
-      image-size-responsive: warn
+      # requires CSP in a header, which is not possible on gh-pages
+      csp-xss: off
+      # handled by NextJS
+      unsized-images: off
+
       maskable-icon: warn
       service-worker: warn
       unused-javascript: warn
       uses-responsive-images: warn
-      offscreen-images: warn
