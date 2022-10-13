@@ -59,6 +59,7 @@ export function ContentCard({ content, sx }: ContentCardProps) {
         layout="responsive"
         style={{ width: "100%", height: "auto" }}
         useWebp={true}
+        priority={content.priority}
       />
       <CardContent>
         <Typography variant="overline">{content.date}</Typography>
@@ -94,6 +95,7 @@ export type ContentItem = {
   link: string;
   date: string;
   linkText: string;
+  priority?: boolean;
 };
 
 export const content: ContentItem[] = [
@@ -134,6 +136,7 @@ export const content: ContentItem[] = [
     link: "https://www.bigdatarepublic.nl/articles/whitepaper-next-level-ml-model-serving-platforms/",
     date: "30 Nov 2021",
     linkText: "Read the whitepaper",
+    priority: true,
   },
   {
     title:
