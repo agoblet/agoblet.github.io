@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
       <main>
         <Grid container>
-          <Grid item container md={8} xs={12} sx={{ alignItems: "center" }}>
+          <Grid item container md={7} xs={12} sx={{ alignItems: "center" }}>
             <Stack>
               <Typography variant="h2" component="h1">
                 Hi, I&apos;m Axel! 👋
@@ -47,8 +47,10 @@ export default function Home() {
           <Grid
             container
             item
-            md={4}
+            position="relative"
+            md={5}
             xs={12}
+            height="400px"
             sx={{
               justifyContent: "center",
             }}
@@ -56,9 +58,10 @@ export default function Home() {
             <ExportedImage
               src={meImg}
               alt="me"
-              width={300}
-              height={400}
+              layout="fill"
+              objectFit="scale-down"
               useWebp={true}
+              priority
             />
           </Grid>
           <Grid item md={6} xs={12} pr={{ md: 2 }}>
