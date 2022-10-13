@@ -10,10 +10,10 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore --fix .",
     "checklint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
     "precommitlint": "npm run checklint || (npm run lint && false)",
-    "build": "next build && next export && next-image-export-optimizer",
+    "build": "next build && next export && next-image-export-optimizer && rm -rf out/images",
     "deps": "npm-check-updates",
     "precommitdeps": "npm run deps || (npm i && false)",
-    "deploy": "gh-pages -d out",
+    "deploy": "gh-pages -d out --dotfiles",
     "ci": "npm ci"
   },
   "dependencies": {
