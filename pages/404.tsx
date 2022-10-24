@@ -2,15 +2,15 @@ import * as React from "react";
 import PageTitle from "../components/PageTitle";
 import { Box, Button } from "@mui/material";
 import Link from "next/link";
-import Head from "next/head";
+import PageHead from "../components/PageHead";
 
 export default function NotFound() {
   return (
     <>
-      <Head>
-        <title>404 | Axel Goblet</title>
-        <meta property="og:title" content="404 | Axel Goblet" />
-      </Head>
+      <PageHead
+        title="Axel Goblet | Machine learning engineer @ BigData Republic"
+        description="Axel Goblet is a machine learning engineer and consultant at BigData Republic. Learn more about the projects he has done and check out his content."
+      />
       <PageTitle title="Page not found 😵" />
       <Box display="flex" justifyContent="center">
         <Link href="/">

@@ -15,8 +15,12 @@ type ConsentState = {
   synced: boolean;
 };
 
+function isClientSide() {
+  return typeof window !== "undefined";
+}
+
 export default function useConsent(): ConsentHook {
-  const stored = getCookie(GA_CONSENT_COOKIE_NAME);
+  const stored = isClientSide() ? getCookie(GA_CONSENT_COOKIE_NAME) : "";
 
   const [state, dispatch] = useReducer(
     (state: ConsentState, action: string) => {

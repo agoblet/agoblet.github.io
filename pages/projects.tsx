@@ -44,16 +44,16 @@ import DockerIcon from "../public/images/tools/docker-icon.svg";
 import { ReactElement, SVGProps } from "react";
 import ExportedImage from "next-image-export-optimizer";
 import { StaticImageData } from "next/image";
-import Head from "next/head";
+import PageHead from "../components/PageHead";
 
-export type IconComponent = (props: SVGProps<SVGElement>) => ReactElement;
+type IconComponent = (props: SVGProps<SVGElement>) => ReactElement;
 
-export type Tool = {
+type Tool = {
   name: string;
   icon: IconComponent;
 };
 
-export const tools = {
+const tools = {
   python: { name: "Python", icon: PythonIcon },
   kubernetes: { name: "Kubernetes", icon: KubernetesIcon },
   gcp: { name: "GCP", icon: GCPIcon },
@@ -80,10 +80,10 @@ export const tools = {
 export default function Projects() {
   return (
     <>
-      <Head>
-        <title>Projects | Axel Goblet</title>
-        <meta property="og:title" content="Projects | Axel Goblet" />
-      </Head>
+      <PageHead
+        title="Projects by Axel Goblet | ML engineer @ BigData Republic"
+        description="Axel has worked with various companies on a wide range of products. Explore the products developed and the tools used."
+      />
       <PageTitle title="Projects" />
       <Stack spacing={0}>
         {projects.map((p, i) => (
@@ -165,16 +165,12 @@ type Project = {
   tools: Tool[];
   role: string;
   logoPath: StaticImageData;
-  logoWidth: number;
-  logoHeight: number;
 };
 
 export const projects: Project[] = [
   {
     organization: "bol.com (via BigData Republic)",
     logoPath: bolLogo,
-    logoWidth: 1013,
-    logoHeight: 213,
     role: "Data Engineer",
     from: "2021",
     to: "2022",
@@ -199,8 +195,6 @@ export const projects: Project[] = [
   {
     organization: "Managed Grid (via BigData Republic)",
     logoPath: managedGridLogo,
-    logoWidth: 293,
-    logoHeight: 208,
     role: "Team Lead",
     from: "2021",
     to: "2021",
@@ -216,8 +210,6 @@ export const projects: Project[] = [
   {
     organization: "Politie (via BigData Republic)",
     logoPath: politieLogo,
-    logoWidth: 2365,
-    logoHeight: 869,
     role: "MLOps Engineer",
     from: "2020",
     to: "2021",
@@ -254,8 +246,6 @@ export const projects: Project[] = [
     from: "2020",
     to: "2020",
     logoPath: rmcLogo,
-    logoWidth: 444,
-    logoHeight: 183,
     description: (
       <Paragraph center={false}>
         I migrated RMC&apos;s sensor data pipelines from legacy software to a
@@ -271,8 +261,6 @@ export const projects: Project[] = [
     from: "2019",
     to: "2020",
     logoPath: kpnLogo,
-    logoWidth: 1669,
-    logoHeight: 756,
     description: (
       <Paragraph center={false}>
         As part of the Finance Analytics team, I helped make KPN Finance more
@@ -286,8 +274,6 @@ export const projects: Project[] = [
   {
     organization: "Nutreco (via BigData Republic)",
     logoPath: nutrecoLogo,
-    logoWidth: 2362,
-    logoHeight: 794,
     role: "Machine Learning Engineer",
     from: "2018",
     to: "2019",
@@ -303,8 +289,6 @@ export const projects: Project[] = [
   {
     organization: "BigData Republic",
     logoPath: bdrLogo,
-    logoWidth: 965,
-    logoHeight: 358,
     role: "Machine Learning Engineer",
     from: "2018",
     to: "Now",
@@ -322,8 +306,6 @@ export const projects: Project[] = [
   {
     organization: "Mediaan",
     logoPath: mediaanLogo,
-    logoWidth: 1181,
-    logoHeight: 930,
     role: "Software Engineer & Data Scientist",
     from: "2014",
     to: "2018",

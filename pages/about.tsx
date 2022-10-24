@@ -3,15 +3,15 @@ import PageTitle from "../components/PageTitle";
 import { Link as MUILink } from "@mui/material";
 import Paragraph from "../components/Paragraph";
 import Link from "next/link";
-import Head from "next/head";
+import PageHead from "../components/PageHead";
 
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About | Axel Goblet</title>
-        <meta property="og:title" content="About | Axel Goblet" />
-      </Head>
+      <PageHead
+        title="About Axel Goblet | ML engineer @ BigData Republic"
+        description="Axel Goblet is a machine learning engineer and consultant at BigData Republic. Learn more about the projects he has done and check out his content."
+      />
       <PageTitle title="About" />
       <Paragraph>
         My name is Axel Goblet. I am a machine learning engineer at BigData
