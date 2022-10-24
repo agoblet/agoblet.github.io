@@ -21,15 +21,15 @@ import Paragraph from "../components/Paragraph";
 import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 import ExportedImage from "next-image-export-optimizer";
-import Head from "next/head";
+import PageHead from "../components/PageHead";
 
 export default function Content() {
   return (
     <>
-      <Head>
-        <title>Content | Axel Goblet</title>
-        <meta property="og:title" content="Content | Axel Goblet" />
-      </Head>
+      <PageHead
+        title="Content by Axel Goblet | ML engineer @ BigData Republic"
+        description="Axel produces free content for tech community. Topics are often ML related and range from blogs and whitepapers to open source projects and conference talks"
+      />
       <PageTitle title="Content" />
       <Masonry columns={{ xs: 1, md: 2 }} spacing={0}>
         {content.map((c, i) => (
@@ -86,7 +86,7 @@ export function ContentCard({ content, sx }: ContentCardProps) {
   );
 }
 
-export type ContentItem = {
+type ContentItem = {
   title: string;
   text: ReactNode;
   imagePath: StaticImageData;

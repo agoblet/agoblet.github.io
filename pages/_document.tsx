@@ -30,14 +30,6 @@ export default function Document() {
 
         <meta property="og:site_name" content="Axel Goblet" />
         <meta property="og:url" content="https://www.axelgoblet.com" />
-        <meta
-          property="og:description"
-          content="Machine learning engineer at Bigdata Republic"
-        />
-        <meta
-          name="description"
-          content="Machine learning engineer at Bigdata Republic"
-        />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"

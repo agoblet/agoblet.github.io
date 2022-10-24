@@ -3,15 +3,15 @@ import PageTitle from "../components/PageTitle";
 import Paragraph from "../components/Paragraph";
 import { Link } from "@mui/material";
 import CookieBanner from "../components/CookieBanner";
-import Head from "next/head";
+import PageHead from "../components/PageHead";
 
 export default function Privacy() {
   return (
     <>
-      <Head>
-        <title>Privacy policy | Axel Goblet</title>
-        <meta property="og:title" content="Privacy policy | Axel Goblet" />
-      </Head>
+      <PageHead
+        title="Privacy Policy | Axel Goblet, ML engineer"
+        description="Axel uses Google Analytics to collect anonymized usage statistics. You can adjust your consent on this page."
+      />
       <PageTitle title="Privacy policy" />
       <Paragraph>
         I use Google Analytics to collect anonymized usage statistics for

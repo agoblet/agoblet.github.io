@@ -16,7 +16,7 @@ ci:
     assertions:
       categories:performance:
         - error
-        - minScore: 0.75
+        - minScore: 0.8
       categories:accessibility:
         - error
         - minScore: 1
@@ -36,3 +36,4 @@ ci:
       service-worker: warn
       unused-javascript: warn
       uses-responsive-images: warn
+      non-composited-animations: warn
