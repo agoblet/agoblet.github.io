@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://www.axelgoblet.com
+
+# Sitemaps
+Sitemap: https://www.axelgoblet.com/sitemap.xml
