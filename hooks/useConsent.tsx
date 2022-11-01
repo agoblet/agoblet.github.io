@@ -2,7 +2,7 @@ import { useReducer } from "react";
 
 const GA_CONSENT_COOKIE_NAME = "ga_consent";
 
-type ConsentHook = {
+export type ConsentHook = {
   state: ConsentState;
   toggle: () => void;
   accept: () => void;
