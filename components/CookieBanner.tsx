@@ -12,18 +12,20 @@ import PageWidth from "./PageWidth";
 import Paragraph from "./Paragraph";
 import { Property } from "csstype";
 import { CheckCircleOutlineOutlined } from "@mui/icons-material";
-import useConsent from "../hooks/useConsent";
+import { ConsentHook } from "../hooks/useConsent";
 
 type CookieBannerProps = {
   position?: Property.Position;
   showWhenConfigured?: boolean;
+  consentHook: ConsentHook;
 };
 
 export default function CookieBanner({
+  consentHook,
   position = "fixed",
   showWhenConfigured = false,
 }: CookieBannerProps) {
-  const { state, toggle, accept, decline } = useConsent();
+  const { state, toggle, accept, decline } = consentHook;
 
   return showWhenConfigured || state.stored === "" ? (
     <Card

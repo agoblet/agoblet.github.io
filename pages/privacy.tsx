@@ -2,10 +2,10 @@ import * as React from "react";
 import PageTitle from "../components/PageTitle";
 import Paragraph from "../components/Paragraph";
 import { Link } from "@mui/material";
-import CookieBanner from "../components/CookieBanner";
 import PageHead from "../components/PageHead";
+import { PropsWithChildren } from "react";
 
-export default function Privacy() {
+export default function Privacy({ children }: PropsWithChildren) {
   return (
     <>
       <PageHead
@@ -27,7 +27,7 @@ export default function Privacy() {
         </Link>
         . You can adjust your preferences below.
       </Paragraph>
-      <CookieBanner position="relative" showWhenConfigured />
+      {children}
     </>
   );
 }
