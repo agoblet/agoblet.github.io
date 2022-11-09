@@ -13,7 +13,7 @@ export default function GoogleAnalytics({ consentHook }: GoogleAnalyticsProps) {
       consentHook.state.stored !== "true";
   });
 
-  return (
+  return consentHook.state.stored === "true" ? (
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${TRACKING_ID}`}
@@ -29,5 +29,5 @@ export default function GoogleAnalytics({ consentHook }: GoogleAnalyticsProps) {
         `}
       </Script>
     </>
-  );
+  ) : null;
 }
