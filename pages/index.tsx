@@ -37,7 +37,7 @@ export default function Home() {
                 <Typography variant="overline">Get in touch</Typography>
               )}
               <ContactButtons />
-              <Link href="/about">
+              <Link href="/about" legacyBehavior>
                 <Button href="/about">more about me</Button>
               </Link>
             </Box>
@@ -68,7 +68,7 @@ export default function Home() {
             <Typography variant="h2" mt={20} mb={3}>
               Current Project
             </Typography>
-            <Link href="/projects">
+            <Link href="/projects" legacyBehavior>
               <Button href="/projects" sx={{ mb: 3 }}>
                 more projects
               </Button>
@@ -81,7 +81,7 @@ export default function Home() {
             <Typography variant="h2" mt={20} mb={3}>
               Latest Content
             </Typography>
-            <Link href="/content">
+            <Link href="/content" legacyBehavior>
               <Button href="/content" sx={{ mb: 3 }}>
                 more content
               </Button>

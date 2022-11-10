@@ -34,7 +34,7 @@ export default function About() {
         my current customer bol.com, I coach colleagues and help with internal
         and external knowledge sharing. I love researching and working on MLOps
         topics. Check out my{" "}
-        <Link href="/images/content">
+        <Link href="/images/content" legacyBehavior>
           <MUILink href="/content">content</MUILink>
         </Link>{" "}
         page if you are interested in my work.

@@ -101,7 +101,7 @@ function MenuSmall({ menuControl }: MenuProps) {
           onClose={menuControl.close}
         >
           {pages.map(({ name, path }, i) => (
-            <Link href={path} key={i}>
+            <Link href={path} key={i} legacyBehavior>
               <MenuItem onClick={menuControl.close}>
                 <Typography
                   textAlign="center"
@@ -178,7 +178,7 @@ function HeaderButton({
   sx = {},
 }: HeaderButtonProps) {
   return (
-    <Link href={to}>
+    <Link href={to} legacyBehavior>
       <ButtonBase
         href={to}
         onClick={() => {
