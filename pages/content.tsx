@@ -58,7 +58,6 @@ export function ContentCard({ content, sx }: ContentCardProps) {
         alt={content.title}
         layout="responsive"
         style={{ width: "100%", height: "auto" }}
-        useWebp={true}
         priority={content.priority}
       />
       <CardContent>

@@ -42,7 +42,7 @@ import PrometheusIcon from "../public/images/tools/prometheus.svg";
 import LinuxIcon from "../public/images/tools/linux-tux.svg";
 import DockerIcon from "../public/images/tools/docker-icon.svg";
 import { ReactElement, SVGProps } from "react";
-import ExportedImage from "next-image-export-optimizer";
+import ExportedImage from "next-image-export-optimizer/legacy/ExportedImage";
 import { StaticImageData } from "next/image";
 import PageHead from "../components/PageHead";
 
@@ -127,9 +127,9 @@ export function ProjectCard({ project, sx }: ProjectCardProps) {
             <ExportedImage
               src={project.logoPath}
               alt={project.organization}
-              useWebp
-              fill
-              style={{ objectFit: "scale-down", objectPosition: "right top" }}
+              layout="fill"
+              objectFit="scale-down"
+              objectPosition="right top"
             />
           </Box>
         </Stack>

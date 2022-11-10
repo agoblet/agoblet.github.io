@@ -4,7 +4,7 @@ import { ContactButtons } from "../components/ContactButtons";
 import meImg from "../public/images/me.jpg";
 import useBreakpoint from "../hooks/useBreakpoint";
 import Link from "next/link";
-import ExportedImage from "next-image-export-optimizer";
+import ExportedImage from "next-image-export-optimizer/legacy/ExportedImage";
 import { ProjectCard, projects } from "./projects";
 import { content, ContentCard } from "./content";
 import PageHead from "../components/PageHead";
@@ -59,7 +59,6 @@ export default function Home() {
             alt="me"
             layout="fill"
             objectFit="scale-down"
-            useWebp={true}
             priority
           />
         </Grid>
