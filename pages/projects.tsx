@@ -127,7 +127,7 @@ export function ProjectCard({ project, sx }: ProjectCardProps) {
             <ExportedImage
               src={project.logoPath}
               alt={project.organization}
-              useWebp={true}
+              useWebp
               fill
               style={{ objectFit: "scale-down", objectPosition: "right top" }}
             />
