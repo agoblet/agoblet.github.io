@@ -124,16 +124,12 @@ export function ProjectCard({ project, sx }: ProjectCardProps) {
             position="relative"
             flexShrink={0}
           >
-            {project.logoPath && (
-              <ExportedImage
-                src={project.logoPath}
-                alt={project.organization}
-                useWebp={true}
-                layout="fill"
-                objectFit="scale-down"
-                objectPosition="right top"
-              />
-            )}
+            <ExportedImage
+              src={project.logoPath}
+              alt={project.organization}
+              fill
+              style={{ objectFit: "scale-down", objectPosition: "right top" }}
+            />
           </Box>
         </Stack>
         <Typography variant="subtitle2" mb={6}>

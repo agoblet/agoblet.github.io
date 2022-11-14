@@ -45,10 +45,9 @@ function FooterPageLink({ name, to }: FooterPageLinkProps) {
   const { pathname } = useRouter();
 
   return (
-    <Link href={to}>
+    <Link href={to} legacyBehavior passHref>
       <MUILink
         variant="overline"
-        href={to}
         underline="hover"
         color={pathname === to ? "primary" : "inherit"}
         sx={{

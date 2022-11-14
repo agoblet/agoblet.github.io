@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { ButtonBase, SxProps } from "@mui/material";
+import { Link as MUILink, SxProps } from "@mui/material";
 import { Variant } from "@mui/material/styles/createTypography";
 import PageWidth from "./PageWidth";
 import useBreakpoint from "../hooks/useBreakpoint";
@@ -101,7 +101,7 @@ function MenuSmall({ menuControl }: MenuProps) {
           onClose={menuControl.close}
         >
           {pages.map(({ name, path }, i) => (
-            <Link href={path} key={i}>
+            <Link href={path} key={i} legacyBehavior>
               <MenuItem onClick={menuControl.close}>
                 <Typography
                   textAlign="center"
@@ -119,7 +119,7 @@ function MenuSmall({ menuControl }: MenuProps) {
         text={title}
         to="/"
         close={menuControl.close}
-        sx={{ margin: "auto", height: "100%" }}
+        sx={{ margin: "auto" }}
       />
     </Box>
   );
@@ -135,6 +135,7 @@ function MenuLarge({ menuControl }: MenuProps) {
         position: "absolute",
         width: "100%",
         height: "100%",
+        alignItems: "center",
       }}
     >
       <Box sx={{ flexGrow: 1 }}>
@@ -178,18 +179,16 @@ function HeaderButton({
   sx = {},
 }: HeaderButtonProps) {
   return (
-    <Link href={to}>
-      <ButtonBase
-        href={to}
-        onClick={() => {
-          close();
-        }}
+    <Link href={to} legacyBehavior passHref>
+      <MUILink
+        variant={variant}
+        underline="hover"
+        onClick={close}
+        color={color}
         sx={{ pr: 2, pl: 2, ...sx }}
       >
-        <Typography variant={variant} component="span" color={color}>
-          {text}
-        </Typography>
-      </ButtonBase>
+        {text}
+      </MUILink>
     </Link>
   );
 }

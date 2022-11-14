@@ -5,7 +5,3 @@ reject:
   - image-webpack-loader
   # v7 causes type error in favicons-webpack-plugin https://github.com/jantimon/favicons-webpack-plugin/issues/309
   - favicons
-
-  # problems getting next-image-export-optimizer to work with next 13
-  - next
-  - next-image-export-optimizer
