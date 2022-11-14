@@ -13,8 +13,8 @@ export default function NotFound() {
       />
       <PageTitle title="Page not found 😵" />
       <Box display="flex" justifyContent="center">
-        <Link href="/" legacyBehavior>
-          <Button href="/">to the civilized world</Button>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <Button>to the civilized world</Button>
         </Link>
       </Box>
     </>

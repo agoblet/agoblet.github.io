@@ -4,7 +4,7 @@ import { ContactButtons } from "../components/ContactButtons";
 import meImg from "../public/images/me.jpg";
 import useBreakpoint from "../hooks/useBreakpoint";
 import Link from "next/link";
-import ExportedImage from "next-image-export-optimizer/legacy/ExportedImage";
+import ExportedImage from "next-image-export-optimizer";
 import { ProjectCard, projects } from "./projects";
 import { content, ContentCard } from "./content";
 import PageHead from "../components/PageHead";
@@ -37,8 +37,8 @@ export default function Home() {
                 <Typography variant="overline">Get in touch</Typography>
               )}
               <ContactButtons />
-              <Link href="/about" legacyBehavior>
-                <Button href="/about">more about me</Button>
+              <Link href="/about" style={{ textDecoration: "none" }}>
+                <Button>more about me</Button>
               </Link>
             </Box>
           </Stack>
@@ -57,8 +57,8 @@ export default function Home() {
           <ExportedImage
             src={meImg}
             alt="me"
-            layout="fill"
-            objectFit="scale-down"
+            fill
+            style={{ objectFit: "scale-down" }}
             priority
           />
         </Grid>
@@ -67,10 +67,8 @@ export default function Home() {
             <Typography variant="h2" mt={20} mb={3}>
               Current Project
             </Typography>
-            <Link href="/projects" legacyBehavior>
-              <Button href="/projects" sx={{ mb: 3 }}>
-                more projects
-              </Button>
+            <Link href="/projects" style={{ textDecoration: "none" }}>
+              <Button sx={{ mb: 3 }}>more projects</Button>
             </Link>
           </Box>
           <ProjectCard project={projects[0]} />
@@ -80,10 +78,8 @@ export default function Home() {
             <Typography variant="h2" mt={20} mb={3}>
               Latest Content
             </Typography>
-            <Link href="/content" legacyBehavior>
-              <Button href="/content" sx={{ mb: 3 }}>
-                more content
-              </Button>
+            <Link href="/content" style={{ textDecoration: "none" }}>
+              <Button sx={{ mb: 3 }}>more content</Button>
             </Link>
           </Box>
           <ContentCard content={content[0]} />
