@@ -4,42 +4,62 @@ import {
   Button,
   CardActions,
   CardContent,
-  Link,
+  Link as MUILink,
   Typography,
   Card,
   SxProps,
+  Chip,
 } from "@mui/material";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "../../components/PageTitle";
 import { Masonry } from "@mui/lab";
-import websiteImage from "../public/images/content/website.png";
-import whitepaperImage from "../public/images/content/whitepaper.png";
-import mlopsCommunityImage from "../public/images/content/mlops-community.jpg";
-import metaflowImage from "../public/images/content/metaflow.jpg";
-import airflowImage from "../public/images/content/airflow.png";
-import haplotypeImage from "../public/images/content/haplotype.png";
-import Paragraph from "../components/Paragraph";
+import websiteImage from "../../public/images/content/website.png";
+import whitepaperImage from "../../public/images/content/whitepaper.png";
+import mlopsCommunityImage from "../../public/images/content/mlops-community.jpg";
+import metaflowImage from "../../public/images/content/metaflow.jpg";
+import airflowImage from "../../public/images/content/airflow.png";
+import haplotypeImage from "../../public/images/content/haplotype.png";
+import Paragraph from "../../components/Paragraph";
 import { StaticImageData } from "next/image";
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 import ExportedImage from "next-image-export-optimizer";
-import PageHead from "../components/PageHead";
+import PageHead from "../../components/PageHead";
+import MicExternalOnIcon from "@mui/icons-material/MicExternalOn";
+import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
+import CodeIcon from "@mui/icons-material/Code";
+import { Stack } from "@mui/system";
+import Link from "next/link";
 
-export default function Content() {
+type ContentProps = {
+  category?: string;
+  title?: string;
+};
+
+export default function Content({ category, title = "Content" }: ContentProps) {
   return (
     <>
       <PageHead
         title="Content by Axel Goblet | ML engineer @ BigData Republic"
-        description="Axel produces free content for tech community. Topics are often ML related and range from blogs and whitepapers to open source projects and conference talks"
+        description="Axel produces free content for tech community. Topics are often ML related and range from articles to code and talks"
       />
-      <PageTitle title="Content" />
+      <PageTitle title={title} />
+      {category !== undefined && (
+        <Box display="flex" justifyContent="center" mb={6}>
+          <Link href="/content" style={{ textDecoration: "none" }}>
+            <Button>View all content</Button>
+          </Link>
+        </Box>
+      )}
       <Masonry columns={{ xs: 1, md: 2 }} spacing={0}>
-        {content.map((c, i) => (
-          <Box key={i}>
-            <ContentCard
-              content={c}
-              sx={{ ml: { sm: 2 }, mr: { sm: 2 }, mb: 4 }}
-            />
-          </Box>
-        ))}
+        {content
+          .filter((c) => category === undefined || c.category.id === category)
+          .map((c, i) => (
+            <Box key={i}>
+              <ContentCard
+                content={c}
+                sx={{ ml: { sm: 2 }, mr: { sm: 2 }, mb: 4 }}
+              />
+            </Box>
+          ))}
       </Masonry>
     </>
   );
@@ -56,34 +76,71 @@ export function ContentCard({ content, sx }: ContentCardProps) {
       <ExportedImage
         src={content.imagePath}
         alt={content.title}
-        layout="responsive"
         style={{ width: "100%", height: "auto" }}
         priority={content.priority}
       />
       <CardContent>
-        <Typography variant="overline">{content.date}</Typography>
-        <Typography variant="h3" component="h2">
-          {content.title}
-        </Typography>
-        <Box mb={4} mt={6}>
-          {content.text}
-        </Box>
+        <Stack>
+          <Box>
+            <Link
+              href={`/content/${content.category.id}`}
+              style={{ textDecoration: "none" }}
+            >
+              <Chip
+                onClick={() => {}}
+                icon={content.category.icon}
+                label={content.category.label}
+              />
+            </Link>
+          </Box>
+          <Typography variant="overline">{content.date}</Typography>
+          <Typography variant="h3" component="h2">
+            {content.title}
+          </Typography>
+          <Box mb={4} mt={6}>
+            {content.text}
+          </Box>
+        </Stack>
       </CardContent>
       <CardActions>
         <Button>
-          <Link
+          <MUILink
             variant="inherit"
             underline="none"
             href={content.link}
             aria-label={content.linkText}
           >
             {content.linkText}
-          </Link>
+          </MUILink>
         </Button>
       </CardActions>
     </Card>
   );
 }
+
+type Category = {
+  icon: ReactElement;
+  label: string;
+  id: string;
+};
+
+const categories = {
+  article: {
+    icon: <HistoryEduIcon />,
+    label: "Article",
+    id: "articles",
+  },
+  talk: {
+    icon: <MicExternalOnIcon />,
+    label: "Talk",
+    id: "talks",
+  },
+  code: {
+    icon: <CodeIcon />,
+    label: "Code",
+    id: "code",
+  },
+};
 
 type ContentItem = {
   title: string;
@@ -95,11 +152,13 @@ type ContentItem = {
   date: string;
   linkText: string;
   priority?: boolean;
+  category: Category;
 };
 
 export const content: ContentItem[] = [
   {
     title: "This website is open source",
+    category: categories.code,
     imagePath: websiteImage,
     imageWidth: 1200,
     imageHeight: 630,
@@ -118,7 +177,8 @@ export const content: ContentItem[] = [
     priority: true,
   },
   {
-    title: "Whitepaper: Next-level ML with Model Serving Platforms",
+    title: "Next-level ML with Model Serving Platforms",
+    category: categories.article,
     imagePath: whitepaperImage,
     imageWidth: 1625,
     imageHeight: 1171,
@@ -139,8 +199,8 @@ export const content: ContentItem[] = [
     priority: true,
   },
   {
-    title:
-      "Podcast: Scaling machine learning capabilities in large organizations",
+    title: "Scaling machine learning capabilities in large organizations",
+    category: categories.talk,
     imagePath: mlopsCommunityImage,
     imageWidth: 900,
     imageHeight: 900,
@@ -161,7 +221,8 @@ export const content: ContentItem[] = [
     linkText: "Listen to the podcast",
   },
   {
-    title: "Blog: A Review of Netflix's Metaflow",
+    title: "A Review of Netflix's Metaflow",
+    category: categories.article,
     imagePath: metaflowImage,
     imageWidth: 1081,
     imageHeight: 337,
@@ -177,8 +238,8 @@ export const content: ContentItem[] = [
     linkText: "Read the blog",
   },
   {
-    title:
-      "Workshop: Scheduling machine learning pipelines using Apache Airflow",
+    title: "Scheduling machine learning pipelines using Apache Airflow",
+    category: categories.talk,
     imagePath: airflowImage,
     imageWidth: 1260,
     imageHeight: 533,
@@ -190,12 +251,12 @@ export const content: ContentItem[] = [
         second part, attendees worked on some exercises in their own Airflow
         cluster, which we deployed for them on AWS. My colleague Dick Abma also
         wrote a{" "}
-        <Link
+        <MUILink
           href="https://www.bigdatarepublic.nl/articles/hosting-workshops-aws-using-ecs-ec2-and-terraform/"
           aria-label="Read the blog about workshop setup"
         >
           blog
-        </Link>{" "}
+        </MUILink>{" "}
         on this setup. The plenary session recording is available on Youtube.
       </Paragraph>
     ),
@@ -205,7 +266,8 @@ export const content: ContentItem[] = [
   },
   {
     title:
-      "Paper: On a Fixed Haplotype Variant of the Minimum Error Correction Problem",
+      "On a Fixed Haplotype Variant of the Minimum Error Correction Problem",
+    category: categories.article,
     imagePath: haplotypeImage,
     imageWidth: 5000,
     imageHeight: 1284,
