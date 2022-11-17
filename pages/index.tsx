@@ -5,8 +5,10 @@ import meImg from "../public/images/me.jpg";
 import useBreakpoint from "../hooks/useBreakpoint";
 import Link from "next/link";
 import ExportedImage from "next-image-export-optimizer";
-import { ProjectCard, projects } from "./projects";
-import { content, ContentCard } from "./content";
+import { ProjectCard } from "./projects";
+import { projects } from "../cms/projects";
+import { contentItems } from "../cms/contentItems";
+import { ContentCard } from "./content";
 import PageHead from "../components/PageHead";
 
 export default function Home() {
@@ -82,7 +84,7 @@ export default function Home() {
               <Button sx={{ mb: 3 }}>more content</Button>
             </Link>
           </Box>
-          <ContentCard content={content[0]} />
+          <ContentCard content={contentItems[0]} />
         </Grid>
       </Grid>
     </>
