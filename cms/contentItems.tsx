@@ -43,7 +43,7 @@ export const contentItems: ContentItem[] = [
   },
   {
     title: "Next-level ML with Model Serving Platforms",
-    category: categories.article,
+    category: categories.articles,
     imagePath: whitepaperImage,
     text: (
       <Paragraph center={false} gutterBottom={false}>
@@ -63,7 +63,7 @@ export const contentItems: ContentItem[] = [
   },
   {
     title: "Scaling machine learning capabilities in large organizations",
-    category: categories.talk,
+    category: categories.talks,
     imagePath: mlopsCommunityImage,
     text: (
       <Paragraph center={false} gutterBottom={false}>
@@ -83,7 +83,7 @@ export const contentItems: ContentItem[] = [
   },
   {
     title: "A Review of Netflix's Metaflow",
-    category: categories.article,
+    category: categories.articles,
     imagePath: metaflowImage,
     text: (
       <Paragraph center={false} gutterBottom={false}>
@@ -98,7 +98,7 @@ export const contentItems: ContentItem[] = [
   },
   {
     title: "Scheduling machine learning pipelines using Apache Airflow",
-    category: categories.talk,
+    category: categories.talks,
     imagePath: airflowImage,
     text: (
       <Paragraph center={false} gutterBottom={false}>
@@ -124,7 +124,7 @@ export const contentItems: ContentItem[] = [
   {
     title:
       "On a Fixed Haplotype Variant of the Minimum Error Correction Problem",
-    category: categories.article,
+    category: categories.articles,
     imagePath: haplotypeImage,
     text: (
       <Paragraph center={false} gutterBottom={false}>

@@ -19,11 +19,14 @@ import Link from "next/link";
 import { contentItems, ContentItem } from "../../cms/contentItems";
 
 type ContentProps = {
-  category?: string;
+  items?: ContentItem[];
   title?: string;
 };
 
-export default function Content({ category, title = "Content" }: ContentProps) {
+export default function Content({
+  items = contentItems,
+  title = "Content",
+}: ContentProps) {
   return (
     <>
       <PageHead
@@ -31,7 +34,7 @@ export default function Content({ category, title = "Content" }: ContentProps) {
         description="Axel produces free content for tech community. Topics are often ML related and range from articles to code and talks"
       />
       <PageTitle title={title} />
-      {category !== undefined && (
+      {items.length !== contentItems.length && (
         <Box display="flex" justifyContent="center" mb={6}>
           <Link href="/content" style={{ textDecoration: "none" }}>
             <Button>View all content</Button>
@@ -39,16 +42,14 @@ export default function Content({ category, title = "Content" }: ContentProps) {
         </Box>
       )}
       <Masonry columns={{ xs: 1, md: 2 }} spacing={0}>
-        {contentItems
-          .filter((c) => category === undefined || c.category.id === category)
-          .map((c, i) => (
-            <Box key={i}>
-              <ContentCard
-                content={c}
-                sx={{ ml: { sm: 2 }, mr: { sm: 2 }, mb: 4 }}
-              />
-            </Box>
-          ))}
+        {items.map((c, i) => (
+          <Box key={i}>
+            <ContentCard
+              content={c}
+              sx={{ ml: { sm: 2 }, mr: { sm: 2 }, mb: 4 }}
+            />
+          </Box>
+        ))}
       </Masonry>
     </>
   );
@@ -72,7 +73,7 @@ export function ContentCard({ content, sx }: ContentCardProps) {
         <Stack>
           <Box>
             <Link
-              href={`/content/${content.category.id}`}
+              href={`/content/${content.category.slug}`}
               style={{ textDecoration: "none" }}
             >
               <Chip

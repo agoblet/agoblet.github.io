@@ -7,23 +7,27 @@ import CodeIcon from "@mui/icons-material/Code";
 export type Category = {
   icon: ReactElement;
   label: string;
-  id: string;
+  slug: string;
+  title: string;
 };
 
 export const categories = {
-  article: {
+  articles: {
     icon: <HistoryEduIcon />,
     label: "Article",
-    id: "articles",
+    slug: "articles",
+    title: "Articles",
   },
-  talk: {
+  talks: {
     icon: <MicExternalOnIcon />,
     label: "Talk",
-    id: "talks",
+    slug: "talks",
+    title: "Talks",
   },
   code: {
     icon: <CodeIcon />,
     label: "Code",
-    id: "code",
+    slug: "code",
+    title: "Code",
   },
 };
