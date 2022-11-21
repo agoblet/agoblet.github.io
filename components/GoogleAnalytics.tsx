@@ -25,7 +25,7 @@ export default function GoogleAnalytics({ consentHook }: GoogleAnalyticsProps) {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', '${TRACKING_ID}');
+          gtag('config', '${TRACKING_ID}', { 'anonymize_ip': true });
         `}
       </Script>
     </>
