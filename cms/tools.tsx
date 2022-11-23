@@ -19,6 +19,7 @@ import AngularIcon from "../public/images/tools/angular-icon.svg";
 import PrometheusIcon from "../public/images/tools/prometheus.svg";
 import LinuxIcon from "../public/images/tools/linux-tux.svg";
 import DockerIcon from "../public/images/tools/docker-icon.svg";
+import DatabricksIcon from "../public/images/tools/databricks.svg";
 import { ReactElement, SVGProps } from "react";
 
 type IconComponent = (props: SVGProps<SVGElement>) => ReactElement;
@@ -50,4 +51,5 @@ export const tools = {
   prometheus: { name: "Prometheus", icon: PrometheusIcon },
   linux: { name: "Linux", icon: LinuxIcon },
   docker: { name: "Docker", icon: DockerIcon },
+  databricks: { name: "Databricks", icon: DatabricksIcon },
 };

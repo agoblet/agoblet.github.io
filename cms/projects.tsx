@@ -8,6 +8,7 @@ import nutrecoLogo from "../public/images/organizations/nutreco.png";
 import mediaanLogo from "../public/images/organizations/mediaan.png";
 import bdrLogo from "../public/images/organizations/bdr.png";
 import managedGridLogo from "../public/images/organizations/managedgrid.png";
+import nnLogo from "../public/images/organizations/nn.png";
 import Paragraph from "../components/Paragraph";
 import { StaticImageData } from "next/image";
 import { Tool, tools } from "./tools";
@@ -23,6 +24,20 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    organization: "NN Group (via BigData Republic)",
+    logoPath: nnLogo,
+    role: "Data Engineer",
+    from: "2022",
+    to: "now",
+    description: (
+      <Paragraph center={false}>
+        I build modular data analytics platform services that are used by
+        various teams within of NN Group.
+      </Paragraph>
+    ),
+    tools: [tools.python, tools.terraform, tools.azure, tools.databricks],
+  },
   {
     organization: "bol.com (via BigData Republic)",
     logoPath: bolLogo,
@@ -156,7 +171,27 @@ export const projects: Project[] = [
         development.
       </Paragraph>
     ),
-    tools: [],
+    tools: [
+      tools.python,
+      tools.kubernetes,
+      tools.docker,
+      tools.gcp,
+      tools.react,
+      tools.ansible,
+      tools.go,
+      tools.kotlin,
+      tools.openstack,
+      tools.aws,
+      tools.terraform,
+      tools.gitlab,
+      tools.airflow,
+      tools.jenkins,
+      tools.azure,
+      tools.tensorflow,
+      tools.prometheus,
+      tools.linux,
+      tools.databricks,
+    ],
   },
   {
     organization: "Mediaan",
