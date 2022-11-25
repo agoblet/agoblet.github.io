@@ -16,8 +16,8 @@ const pages = [
 
 export default function Footer() {
   return (
-    <footer>
-      <Paper sx={{ mt: 10, pt: 1, pb: 1 }}>
+    <footer style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+      <Paper sx={{ mt: 10, pt: 1, pb: 1, flexGrow: 1 }}>
         <PageWidth>
           <Stack direction="row" flexWrap="wrap">
             <Stack flexGrow="1">
