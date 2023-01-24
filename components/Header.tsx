@@ -17,7 +17,6 @@ import { useRouter } from "next/router";
 const pages = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Projects", path: "/projects" },
   { name: "Content", path: "/content" },
 ];
 const title = "Axel Goblet";
