@@ -10,7 +10,6 @@ ci:
       - http://localhost/content/articles.html
       - http://localhost/about.html
       - http://localhost/404.html
-      - http://localhost/projects.html
       - http://localhost/privacy.html
   assert:
     preset: lighthouse:recommended

@@ -9,7 +9,6 @@ import Link from "next/link";
 const pages = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Projects", path: "/projects" },
   { name: "Content", path: "/content" },
   { name: "Privacy policy", path: "/privacy" },
 ];

@@ -19,37 +19,55 @@ import AngularIcon from "../public/images/tools/angular-icon.svg";
 import PrometheusIcon from "../public/images/tools/prometheus.svg";
 import LinuxIcon from "../public/images/tools/linux-tux.svg";
 import DockerIcon from "../public/images/tools/docker-icon.svg";
-import DatabricksIcon from "../public/images/tools/databricks.svg";
 import { ReactElement, SVGProps } from "react";
 
 type IconComponent = (props: SVGProps<SVGElement>) => ReactElement;
 
-export type Tool = {
+type Tool = {
   name: string;
   icon: IconComponent;
 };
 
-export const tools = {
-  python: { name: "Python", icon: PythonIcon },
-  kubernetes: { name: "Kubernetes", icon: KubernetesIcon },
-  gcp: { name: "GCP", icon: GCPIcon },
-  react: { name: "React", icon: ReactIcon },
-  ansible: { name: "Ansible", icon: AnsibleIcon },
-  go: { name: "Go", icon: GoIcon },
-  kotlin: { name: "Kotlin", icon: KotlinIcon },
-  openstack: { name: "Openstack", icon: OpenstackIcon },
-  aws: { name: "AWS", icon: AWSIcon },
-  terraform: { name: "Terraform", icon: TerraformIcon },
-  gitlab: { name: "Gitlab", icon: GitlabIcon },
-  airflow: { name: "Airflow", icon: AirflowIcon },
-  jenkins: { name: "Jenkins", icon: JenkinsIcon },
-  azure: { name: "Azure", icon: AzureIcon },
-  r: { name: "R", icon: RIcon },
-  tensorflow: { name: "Tensorflow", icon: TensorflowIcon },
-  csharp: { name: "C#", icon: CSharpIcon },
-  angular: { name: "Angular", icon: AngularIcon },
-  prometheus: { name: "Prometheus", icon: PrometheusIcon },
-  linux: { name: "Linux", icon: LinuxIcon },
-  docker: { name: "Docker", icon: DockerIcon },
-  databricks: { name: "Databricks", icon: DatabricksIcon },
+type ToolCategory = {
+  name: string;
+  tools: Tool[];
 };
+
+export const tools: ToolCategory[] = [
+  {
+    name: "Languages & Frameworks",
+    tools: [
+      { name: "Python", icon: PythonIcon },
+      { name: "Go", icon: GoIcon },
+      { name: "Kotlin", icon: KotlinIcon },
+      { name: "React", icon: ReactIcon },
+      { name: "R", icon: RIcon },
+      { name: "C#", icon: CSharpIcon },
+      { name: "Angular", icon: AngularIcon },
+    ],
+  },
+  {
+    name: "Cloud & Infrastructure",
+    tools: [
+      { name: "Kubernetes", icon: KubernetesIcon },
+      { name: "AWS", icon: AWSIcon },
+      { name: "Terraform", icon: TerraformIcon },
+      { name: "Azure", icon: AzureIcon },
+      { name: "GCP", icon: GCPIcon },
+      { name: "Gitlab", icon: GitlabIcon },
+      { name: "Prometheus", icon: PrometheusIcon },
+      { name: "Linux", icon: LinuxIcon },
+      { name: "Docker", icon: DockerIcon },
+      { name: "Ansible", icon: AnsibleIcon },
+      { name: "Openstack", icon: OpenstackIcon },
+      { name: "Jenkins", icon: JenkinsIcon },
+    ],
+  },
+  {
+    name: "Data & Machine Learning",
+    tools: [
+      { name: "Airflow", icon: AirflowIcon },
+      { name: "Tensorflow", icon: TensorflowIcon },
+    ],
+  },
+];

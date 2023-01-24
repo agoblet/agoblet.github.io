@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import MicExternalOnIcon from "@mui/icons-material/MicExternalOn";
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import CodeIcon from "@mui/icons-material/Code";
+import ProjectIcon from "@mui/icons-material/WaterfallChart";
 
 export type Category = {
   icon: ReactElement;
@@ -29,5 +30,11 @@ export const categories = {
     label: "Code",
     slug: "code",
     title: "Code",
+  },
+  projects: {
+    icon: <ProjectIcon />,
+    label: "Project",
+    slug: "projects",
+    title: "Projects",
   },
 };

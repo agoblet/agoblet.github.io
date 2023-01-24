@@ -1,11 +1,13 @@
 import * as React from "react";
-import { Link as MUILink } from "@mui/material";
+import { Link } from "@mui/material";
 import websiteImage from "../public/images/content/website.png";
 import whitepaperImage from "../public/images/content/whitepaper.png";
 import mlopsCommunityImage from "../public/images/content/mlops-community.jpg";
 import metaflowImage from "../public/images/content/metaflow.jpg";
 import airflowImage from "../public/images/content/airflow.png";
 import haplotypeImage from "../public/images/content/haplotype.png";
+import policeImage from "../public/images/content/politie.jpg";
+import cbImage from "../public/images/content/cb.jpeg";
 import Paragraph from "../components/Paragraph";
 import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
@@ -42,6 +44,31 @@ export const contentItems: ContentItem[] = [
     priority: true,
   },
   {
+    title: "The Advance Analytics Platform of the Dutch Police",
+    category: categories.projects,
+    imagePath: policeImage,
+    text: (
+      <Paragraph center={false} gutterBottom={false}>
+        We built an advanced analytics platform helping hundreds of data
+        professionals at the Dutch Police work secure and efficiently. The
+        platform is based on Kubeflow, and integrated with all important police
+        systems. My former colleague Steven Reitsma published an interesting
+        (Dutch) blog about it. He also published a{" "}
+        <Link
+          href="https://reitsma.io/blog/using-istio-to-mitm-our-users-traffic"
+          aria-label="Read the related article"
+        >
+          related article
+        </Link>{" "}
+        on one of our Istio use cases.
+      </Paragraph>
+    ),
+    link: "https://reitsma.io/blog/aap",
+    date: "12 Dec 2021",
+    linkText: "Read the blog",
+    priority: true,
+  },
+  {
     title: "Next-level ML with Model Serving Platforms",
     category: categories.articles,
     imagePath: whitepaperImage,
@@ -59,7 +86,6 @@ export const contentItems: ContentItem[] = [
     link: "https://www.bigdatarepublic.nl/articles/whitepaper-next-level-ml-model-serving-platforms/",
     date: "30 Nov 2021",
     linkText: "Read the whitepaper",
-    priority: true,
   },
   {
     title: "Scaling machine learning capabilities in large organizations",
@@ -108,12 +134,12 @@ export const contentItems: ContentItem[] = [
         second part, attendees worked on some exercises in their own Airflow
         cluster, which we deployed for them on AWS. My colleague Dick Abma also
         wrote a{" "}
-        <MUILink
+        <Link
           href="https://www.bigdatarepublic.nl/articles/hosting-workshops-aws-using-ecs-ec2-and-terraform/"
           aria-label="Read the blog about workshop setup"
         >
           blog
-        </MUILink>{" "}
+        </Link>{" "}
         on this setup. The plenary session recording is available on Youtube.
       </Paragraph>
     ),
@@ -141,5 +167,25 @@ export const contentItems: ContentItem[] = [
     link: "https://www.researchgate.net/publication/326064707_On_a_Fixed_Haplotype_Variant_of_the_Minimum_Error_Correction_Problem",
     date: "29 Jun 2018",
     linkText: "Read the paper",
+  },
+  {
+    title: "Order today, receive tomorrow",
+    category: categories.projects,
+    imagePath: cbImage,
+    text: (
+      <Paragraph center={false} gutterBottom={false}>
+        We built an order forecasting system for logistics service provider CB.
+        We built a machine learning system that answered the question:{" "}
+        <i>
+          &quot;To what customers are we expected to deliver tomorrow and what
+          quantity?&quot;
+        </i>{" "}
+        The system was developed on Microsoft Azure and yielded a 10% reduction
+        in shipping costs.
+      </Paragraph>
+    ),
+    link: "https://mediaan.com/cases/predictive-model-cb",
+    date: "13 May 2018",
+    linkText: "Explore the case",
   },
 ];

@@ -1,15 +1,24 @@
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Chip,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
 import * as React from "react";
 import { ContactButtons } from "../components/ContactButtons";
 import meImg from "../public/images/me.jpg";
 import useBreakpoint from "../hooks/useBreakpoint";
 import Link from "next/link";
 import ExportedImage from "next-image-export-optimizer";
-import { ProjectCard } from "./projects";
-import { projects } from "../cms/projects";
 import { contentItems } from "../cms/contentItems";
 import { ContentCard } from "./content";
 import PageHead from "../components/PageHead";
+import { tools } from "../cms/tools";
+import { Fragment } from "react";
 
 export default function Home() {
   const isBigScreen = useBreakpoint("md");
@@ -64,19 +73,38 @@ export default function Home() {
             priority
           />
         </Grid>
-        <Grid item md={6} xs={12} pr={{ md: 2 }}>
-          <Box sx={{ textAlign: "center" }}>
+        <Grid item md={6} xs={12} pr={{ md: 2 }} height="100%">
+          <Box sx={{ textAlign: "center", height: { md: 150 } }}>
             <Typography variant="h2" mt={20} mb={3}>
-              Current Project
+              Tools I used
             </Typography>
-            <Link href="/projects" style={{ textDecoration: "none" }}>
-              <Button sx={{ mb: 3 }}>more projects</Button>
-            </Link>
           </Box>
-          <ProjectCard project={projects[0]} />
+          <Card>
+            <CardContent>
+              <Stack>
+                {tools.map((t, i) => (
+                  <Fragment key={i}>
+                    <Typography>{t.name}</Typography>
+                    <Box
+                      sx={{ flexWrap: "wrap", display: "flex", mt: 1, mb: 3 }}
+                    >
+                      {t.tools.map((t, i) => (
+                        <Chip
+                          key={i}
+                          icon={t.icon({ height: 20, width: 20 })}
+                          label={t.name}
+                          sx={{ mr: 1, mb: 1 }}
+                        />
+                      ))}
+                    </Box>
+                  </Fragment>
+                ))}
+              </Stack>
+            </CardContent>
+          </Card>
         </Grid>
         <Grid item md={6} xs={12} pl={{ md: 2 }}>
-          <Box sx={{ textAlign: "center" }}>
+          <Box sx={{ textAlign: "center", height: 150 }}>
             <Typography variant="h2" mt={20} mb={3}>
               Latest Content
             </Typography>
