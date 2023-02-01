@@ -36,7 +36,7 @@ export default function Home() {
               Hi, I&apos;m Axel! 👋
             </Typography>
             <Typography variant="subtitle1">
-              Machine learning engineer @ BigData Republic
+              Senior MLOps Engineer @ TMNL
             </Typography>
             <Typography mb={4} variant="subtitle2">
               Valkenburg aan de Geul, Netherlands 🇳🇱
