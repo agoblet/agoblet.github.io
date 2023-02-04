@@ -8,8 +8,8 @@ export default function NotFound() {
   return (
     <>
       <PageHead
-        title="Axel Goblet | Machine learning engineer @ BigData Republic"
-        description="Axel Goblet is a machine learning engineer and consultant at BigData Republic. Learn more about the projects he has done and check out his content."
+        title="Axel Goblet | Senior MLOps Engineer @ TMNL"
+        description="Axel Goblet is a senior MLOPS engineer at TMNL. Learn more about him and check out his content."
       />
       <PageTitle title="Page not found 😵" />
       <Box display="flex" justifyContent="center">

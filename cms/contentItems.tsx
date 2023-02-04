@@ -80,7 +80,8 @@ export const contentItems: ContentItem[] = [
         description of what I think a model serving platform should look like. I
         deliberately kept out implementation details. These differ from company
         to company. Therefore, they are not useful to all readers. You can
-        download the whitepaper for free from BigData Republic&apos;s website.
+        download the whitepaper for free from BigData Senior MLOps Engineer @
+        TMNL&apos;s website.
       </Paragraph>
     ),
     link: "https://www.bigdatarepublic.nl/articles/whitepaper-next-level-ml-model-serving-platforms/",

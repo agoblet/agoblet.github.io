@@ -30,8 +30,8 @@ export default function Content({
   return (
     <>
       <PageHead
-        title="Content by Axel Goblet | ML engineer @ BigData Republic"
-        description="Axel produces free content for tech community. Topics are often ML related and range from articles to code and talks"
+        title="Content by Axel Goblet | Senior MLOps Engineer @ TMNL"
+        description="Axel produces free content for the tech community. Topics are often ML related and range from articles to code, projects and talks"
       />
       <PageTitle title={title} />
       {items.length !== contentItems.length && (
