@@ -26,8 +26,8 @@ export default function Home() {
   return (
     <>
       <PageHead
-        title="Axel Goblet | Machine learning engineer @ BigData Republic"
-        description="Axel Goblet is a machine learning engineer and consultant at BigData Republic. Learn more about the projects he has done and check out his content."
+        title="Axel Goblet | Senior MLOps Engineer @ TMNL"
+        description="Axel Goblet is a senior MLOPS engineer at TMNL. Learn more about him and check out his content."
       />
       <Grid container>
         <Grid item container md={7} xs={12} sx={{ alignItems: "center" }}>
@@ -36,7 +36,7 @@ export default function Home() {
               Hi, I&apos;m Axel! 👋
             </Typography>
             <Typography variant="subtitle1">
-              Machine learning engineer @ BigData Republic
+              Senior MLOps Engineer @ TMNL
             </Typography>
             <Typography mb={4} variant="subtitle2">
               Valkenburg aan de Geul, Netherlands 🇳🇱
