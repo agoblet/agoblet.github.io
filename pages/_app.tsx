@@ -28,8 +28,8 @@ export default function App({ Component }: AppProps) {
             </Component>
           </PageWidth>
         </main>
-        <CookieBanner consentHook={consentHook} />
         <Footer />
+        <CookieBanner consentHook={consentHook} />
       </MUITheme>
     </Stack>
   );
