@@ -20,7 +20,9 @@ export default function App({ Component }: AppProps) {
         <main>
 
           <        PageWidth>
-            <Component>
+            <
+
+              Component>
               <CookieBanner
                 consentHook={consentHook}
                 position="relative"
