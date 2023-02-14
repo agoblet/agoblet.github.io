@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run format
+npm run checkformat || (npm run format && false)
+npm run checklint || (npm run lint && false)
+npm run deps || (npm i && false)
+npm ci
+npm run build

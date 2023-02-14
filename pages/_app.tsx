@@ -18,11 +18,8 @@ export default function App({ Component }: AppProps) {
       <MUITheme>
         <Header />
         <main>
-
-          <        PageWidth>
-            <
-
-              Component>
+          <PageWidth>
+            <Component>
               <CookieBanner
                 consentHook={consentHook}
                 position="relative"

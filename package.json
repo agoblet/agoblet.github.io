@@ -6,15 +6,11 @@
     "dev": "next dev",
     "format": "prettier --write --ignore-path .gitignore .",
     "checkformat": "prettier --check --ignore-path .gitignore .",
-    "precommitformat": "npm run checkformat || (npm run format && false)",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore --fix .",
     "checklint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
-    "precommitlint": "npm run checklint || (npm run lint && false)",
     "build": "next build && next export && next-image-export-optimizer && next-sitemap && rm -rf out/images",
     "deps": "npm-check-updates",
-    "precommitdeps": "npm run deps || (npm i && false)",
     "deploy": "gh-pages -d out --dotfiles",
-    "ci": "npm ci",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -35,8 +31,8 @@
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
     "eslint": "8.34.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-next": "13.1.6",
@@ -50,13 +46,6 @@
     "npm-check-updates": "^16.7.4",
     "prettier": "^2.8.4",
     "typescript": "4.9.5",
-    "husky": "^8.0.0"
-  },
-  "pre-commit": [
-    "precommitformat",
-    "precommitlint",
-    "precommitdeps",
-    "ci",
-    "build"
-  ]
+    "husky": "^8.0.3"
+  }
 }
