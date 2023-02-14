@@ -1,7 +1,10 @@
-name: CI/CD
-on: [push]
+name: CD
+on:
+  push:
+    branches:
+      - main
 jobs:
-  cicd:
+  cd:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -12,23 +15,11 @@ jobs:
           node-version: 17.x
       - name: install npm packages
         run: npm ci
-      - name: check for outdated dependencies
-        run: npm run deps
-        if: github.ref_name != 'main'
-      - name: format
-        run: npm run checkformat
-      - name: lint
-        run: npm run checklint
       - name: build
         run: npm run build
-      - name: lighthouse desktop
-        run: npx lhci autorun --collect.settings.preset=desktop
-      - name: lighthouse mobile
-        run: npx lhci autorun
       - name: deploy
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: github.ref_name == 'main'

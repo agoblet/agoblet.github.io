@@ -13,6 +13,9 @@ import AirflowIcon from "../public/images/tools/airflow.svg";
 import JenkinsIcon from "../public/images/tools/jenkins.svg";
 import AzureIcon from "../public/images/tools/azure.svg";
 import TensorflowIcon from "../public/images/tools/tensorflow.svg";
+import KubeflowIcon from "../public/images/tools/kubeflow.svg";
+import MLflowIcon from "../public/images/tools/mlflow.svg";
+import BentoMLIcon from "../public/images/tools/bentoml.svg";
 import RIcon from "../public/images/tools/r.svg";
 import CSharpIcon from "../public/images/tools/c-sharp.svg";
 import AngularIcon from "../public/images/tools/angular-icon.svg";
@@ -68,6 +71,9 @@ export const tools: ToolCategory[] = [
     tools: [
       { name: "Airflow", icon: AirflowIcon },
       { name: "Tensorflow", icon: TensorflowIcon },
+      { name: "MLflow", icon: MLflowIcon },
+      { name: "BentoML", icon: BentoMLIcon },
+      { name: "Kubeflow", icon: KubeflowIcon },
     ],
   },
 ];

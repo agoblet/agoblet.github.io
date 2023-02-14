@@ -6,15 +6,12 @@
     "dev": "next dev",
     "format": "prettier --write --ignore-path .gitignore .",
     "checkformat": "prettier --check --ignore-path .gitignore .",
-    "precommitformat": "npm run checkformat || (npm run format && false)",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore --fix .",
     "checklint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
-    "precommitlint": "npm run checklint || (npm run lint && false)",
     "build": "next build && next export && next-image-export-optimizer && next-sitemap && rm -rf out/images",
     "deps": "npm-check-updates",
-    "precommitdeps": "npm run deps || (npm i && false)",
     "deploy": "gh-pages -d out --dotfiles",
-    "ci": "npm ci"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -22,8 +19,8 @@
     "@fontsource/moulpali": "^4.5.12",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.0",
-    "@mui/lab": "5.0.0-alpha.118",
-    "@mui/material": "^5.11.7",
+    "@mui/lab": "5.0.0-alpha.119",
+    "@mui/material": "^5.11.8",
     "next": "^13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -31,12 +28,12 @@
   "devDependencies": {
     "@lhci/cli": "^0.10.0",
     "@svgr/webpack": "^6.5.1",
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.27",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.28",
     "@types/react-dom": "18.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "eslint": "8.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "8.34.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-next": "13.1.6",
     "eslint-config-prettier": "^8.6.0",
@@ -44,18 +41,11 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "gh-pages": "^5.0.0",
-    "next-image-export-optimizer": "^1.2.0",
-    "next-sitemap": "^3.1.49",
-    "npm-check-updates": "^16.6.3",
-    "pre-commit": "^1.2.2",
-    "prettier": "^2.8.3",
-    "typescript": "4.9.5"
-  },
-  "pre-commit": [
-    "precommitformat",
-    "precommitlint",
-    "precommitdeps",
-    "ci",
-    "build"
-  ]
+    "next-image-export-optimizer": "^1.2.1",
+    "next-sitemap": "^3.1.52",
+    "npm-check-updates": "^16.7.4",
+    "prettier": "^2.8.4",
+    "typescript": "4.9.5",
+    "husky": "^8.0.3"
+  }
 }
